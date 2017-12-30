@@ -1,14 +1,15 @@
 import React from "react"; 
-
+import { Button, Navbar } from "react-bootstrap"; 
 export default class Layout extends React.Component{ 
 	constructor(){
 		super(); 
 	}
 	render(){
 		return (
-			<div class="navbar navbar-expand-lg navbar-light text-center" style="background-color: #e3f2fd;">
-			<a class="navbar-brand center">Hello World!</a>
-			</div>
+				<div class="navbar navbar-expand-lg navbar-light text-center" styles="background-color: #e3f2fd;">
+				<a class="navbar-brand center">Hello World!</a>
+				<Button bsStyle="primary">Primary</Button>
+				</div>
 		);
 	}
 }

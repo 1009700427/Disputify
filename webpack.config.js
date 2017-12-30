@@ -25,7 +25,10 @@ module.exports = {
 		        }, {
 		            loader: "less-loader" // compiles Less to CSS
 		        }]
-		    }
+		    },
+		    { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },  //添加
+    		{ test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000" }, //添加
+    		{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
 		]
 	},
   	

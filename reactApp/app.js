@@ -1,7 +1,16 @@
-import React from "react"; 
-import ReactDOM from "react-dom"; 
+import React from "react";
+import ReactDOM from "react-dom";
 
-import Layout from "./components/Layout"
+import Login from "./views/Login.js";
+import { HashRouter, Route, IndexRoute } from "react-router-dom"; 
 
 const app = document.getElementById('root');
-ReactDOM.render(<Layout/>, app);
+
+const router = (
+  	<HashRouter history={history}>
+		<Route path="/" component={Login}></Route> 
+	</HashRouter> 
+);
+
+
+ReactDOM.render(router, app);
