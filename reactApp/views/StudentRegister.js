@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom"; 
 import { Link } from "react-router-dom"; 
 import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
+const dbDriver = require("../../backend/database/dbDriver.js"); 
 
 export default class StudentRegister extends React.Component{
 	constructor(){
@@ -15,11 +16,16 @@ export default class StudentRegister extends React.Component{
 
 	onSubmit(event){
 		event.preventDefault(); 
-		if(password!=repeatPassword){
+		if(this.state.password!=this.state.repeatPassword){
 			console.log("password and repeatPassword are not equal!");
 			return; 
 		}
-
+		const userData = {
+			type: "student", 
+			username: this.state.username, 
+			password: this.state.password
+		}
+		dbDriver.addUser(userData);
 	}
 
 	render(){
@@ -32,7 +38,7 @@ export default class StudentRegister extends React.Component{
 				            type="text"
 				            placeholder="Enter Username"
 				            value={this.state.username}
-				            onChange={(event) => this.setState(username: e.target.value)}
+				            onChange={(e) => this.setState({username: e.target.value})}
 				          />
 		          		</ControlLabel><br/>
 		          		<ControlLabel>
@@ -40,7 +46,7 @@ export default class StudentRegister extends React.Component{
 		          			type="password"
 		          			placeholder="Enter Password"
 		          			value={this.state.password}
-		          			onChange={(event)=>this.setState(password: e.target.value)}
+		          			onChange={(e)=>this.setState({password: e.target.value})}
 		          			/>
 		          		</ControlLabel><br/>
 		          		<ControlLabel>
@@ -48,7 +54,7 @@ export default class StudentRegister extends React.Component{
 		          			type="password"
 		          			placeholder="Enter Password"
 		          			value={this.state.repeatPassword}
-		          			onChange={(event)=>this.setState(repeatPassword: e.target.value)}
+		          			onChange={(e)=>this.setState({repeatPassword: e.target.value})}
 		          			/>
 		          		</ControlLabel>
 		          		<br/>
