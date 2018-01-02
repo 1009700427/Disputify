@@ -1,9 +1,9 @@
 import React from "react"; 
 import ReactDOM from "react-dom"; 
 import { Link } from "react-router-dom"; 
-import LoginForm from "../components/LoginForm";
+import FacultyLoginForm from "../components/FacultyLoginForm";
 import '../assets/stylesheets/login.less'
-export default class Login extends React.Component{ 
+export default class FacultyLogin extends React.Component{ 
 	constructor(){
 		super(); 
 		this.state = {
@@ -21,8 +21,8 @@ export default class Login extends React.Component{
 			<div class="login-page">
 				<div class="login-wrapper">
 					<img src={require("../img/icon.png")}/>
-					<h2>Disputify</h2>
-					<LoginForm/>
+					<h2>Course Staff</h2>
+					<FacultyLoginForm/>
 				</div> 
 			</div> 
 		)

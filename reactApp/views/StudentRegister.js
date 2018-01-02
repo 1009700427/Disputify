@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Link } from "react-router-dom"; 
 import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
 
-export default class Register extends React.Component{
+export default class StudentRegister extends React.Component{
 	constructor(){
 		super(); 
 		this.state = {
@@ -26,7 +26,7 @@ export default class Register extends React.Component{
 		return(
 			<div class="register-page">
 				<div class="login-wrapper">
-					<h2>Register</h2> 
+					<h2>Student Register</h2> 
 					<form action="/" method="POST" onSubmit={(event) => this.onSubmit(event)}>
 						<ControlLabel>Username <FormControl
 				            type="text"
@@ -56,7 +56,7 @@ export default class Register extends React.Component{
 					      Register
 					    </Button>
 		          		<br/>
-		          		<Link to='/'>
+		          		<Link to='/studentLogin'>
 					    	<Button bsStyle="primary">
 					    		Cancel
 					    	</Button> 

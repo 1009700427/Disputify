@@ -29,9 +29,15 @@ export default class LoginForm extends React.Component{
 			      Login
 			    </Button>
 			    <br/>
-			    <Link to='/register'>
+			    <Link to='/facultyRegister'>
 			    	<Button bsStyle="primary">
 			    		Register
+			    	</Button> 
+			    </Link>
+			    <br/>
+			    <Link to='/'>
+			    	<Button bsStyle="primary">
+			    		Cancel
 			    	</Button> 
 			    </Link>
 			</form> 
