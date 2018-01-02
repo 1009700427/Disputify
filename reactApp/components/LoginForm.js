@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom"; 
 import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
 import { Link } from 'react-router-dom';
- 
+import '../assets/stylesheets/login.less'
+
 export default class LoginForm extends React.Component{
 	constructor(){
 		super(); 
@@ -28,7 +29,7 @@ export default class LoginForm extends React.Component{
 			      Login
 			    </Button>
 			    <br/>
-			    <Link to='/#'>
+			    <Link to='/register'>
 			    	<Button bsStyle="primary">
 			    		Register
 			    	</Button> 

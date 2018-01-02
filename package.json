@@ -37,13 +37,16 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
+    "css-loader": "^0.28.7",
     "flux": "^3.1.3",
     "history": "^1.17.0",
     "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "style-loader": "^0.19.1"
   }
 }

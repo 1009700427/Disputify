@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom"; 
 import { Link } from "react-router-dom"; 
 import LoginForm from "../components/LoginForm";
-// icon = require("../img/icon.png");
+import '../assets/stylesheets/login.less'
 export default class Login extends React.Component{ 
 	constructor(){
 		super(); 
