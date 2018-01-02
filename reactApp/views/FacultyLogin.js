@@ -11,11 +11,6 @@ export default class FacultyLogin extends React.Component{
 			password: ''
 		}
 	}
-
-	onSubmit(event){ 
-
-	}
-
 	render(){
 		return (
 			<div class="login-page">
