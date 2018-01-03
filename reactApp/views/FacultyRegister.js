@@ -19,7 +19,8 @@ export default class FacultyRegister extends React.Component{
 			console.log("password and repeatPassword are not equal!");
 			return; 
 		}
-		if(username==null || username=="" || password=="" || password==null){
+		if(this.state.username==null || this.state.username=="" 
+			|| this.state.password=="" || this.state.password==null){
 			return; 
 		}
 		const userData = {

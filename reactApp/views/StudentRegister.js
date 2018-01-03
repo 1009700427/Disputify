@@ -20,14 +20,12 @@ export default class StudentRegister extends React.Component{
 			console.log("password and repeatPassword are not equal!");
 			return; 
 		}
-		if(username==null || username=="" || password=="" || password==null){
+		if(this.state.username==null || this.state.username=="" 
+			|| this.state.password=="" || this.state.password==null){
 			return; 
 		}
-		const userData = {
-			type: "student", 
-			username: this.state.username, 
-			password: this.state.password
-		}
+		const userData = ["student",this.state.username,this.state.password];
+		
 		dbDriver.addUser(userData);
 	}
 

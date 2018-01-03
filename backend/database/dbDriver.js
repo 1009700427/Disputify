@@ -24,7 +24,8 @@ module.exports.checkUser = function(data){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
 	connection.connect();
-	connection.query("SELECT FROM DisputifyDB.User WHERE type=?, username=?, password=?", data, function(error, results, fields){
+	console.log(data);
+	connection.query("SELECT * FROM DisputifyDB.User WHERE type=? AND username=? AND password=?", data, function(error, results, fields){
 		if(error){
 			throw error; 
 		}
