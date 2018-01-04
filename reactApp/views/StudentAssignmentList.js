@@ -1,13 +1,23 @@
 import React from "react"; 
 import ReactDOM from "react-dom"; 
 import { Link } from 'react-router-dom';
-import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem} from "react-bootstrap"; 
+import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap"; 
 import StudentCourseList from "../components/StudentCourseList";
 const dbDriver = require("../../backend/database/dbDriver.js");
 
 export default class StudentAssignmentList extends React.Component{
-	constructor(){
-		super(); 
+	constructor(props){
+		super(props); 
+		this.state = {
+			disputeAssignmentTitle: '', 
+			viewAssignmentTitle: ''
+		}
+	}
+	logOutUser(){
+
+	}
+	searchAssignment(assignmentName){
+
 	}
 	render(){
 		return(
@@ -16,11 +26,13 @@ export default class StudentAssignmentList extends React.Component{
 					<h2>
 						Assignment List 
 					</h2> 
-					<Button bsStyle="danger" onClick={() => this.userSignOut()}></Button> 
+					<Link to='/'>
+						<Button bsStyle="danger" onClick={()=>logOutUser()}>Log Out</Button> 
+					</Link>					
 					<div class="labels">
 						<h5>Raise New Disputes</h5>  
 						<h5>Show Assignments by Courses</h5> 
-						<h5>Filter Assignments</h5> 
+						<h5>View Assignments</h5> 
 					</div> 
 					<div class="space"></div>
 				</div> 
@@ -28,16 +40,16 @@ export default class StudentAssignmentList extends React.Component{
 					<FormControl
 						type="text"
 						placeholder="Enter Assignment Title"
-						onChange={}
+						onChange={(e) => this.setState({disputeAssignmentTitle: e.target.value})}
 					/>
-					<Button bsStyle="success" onChange={}></Button> 
+					<Button bsStyle="success" onClick={()=>searchAssignment(this.state.disputeAssignmentTitle)}><Glyphicon glyph="search" /></Button> 
 					<StudentCourseList/>
 					<FormControl
 						type="text"
 						placeholder="Enter Assignment Title"
-						onChange={}
+						onChange={(e) => this.setState({viewAssignmentTitle: e.target.value})}
 					/>
-					<Button bsStyle="success" onChange={}></Button> 
+					<Button bsStyle="success" onClick={()=>searchAssignment(this.state.viewAssignmentTitle)}><Glyphicon glyph="th" /></Button> 
 				</div> 
 			</div> 
 		);

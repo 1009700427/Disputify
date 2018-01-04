@@ -37,7 +37,7 @@ module.exports.checkUser = function(data){
 		}
 		connection.end(); 
 		console.log("return true!");
-		return false; 
+		return true; 
 	});
 	connection.end(); 
 }
