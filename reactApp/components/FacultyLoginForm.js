@@ -26,8 +26,7 @@ export default class LoginForm extends React.Component{
 			return true; 
 		}
 		else{
-			document.getElementById("err-message").innerHTML = "Incorrect Username or Password"; 
-			document.getElementById("err-message").style.color = "red";
+			alert("Incorrect Username or Password");
 			return false; 
 		}
 	}

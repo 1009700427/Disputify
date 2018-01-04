@@ -38,4 +38,12 @@ module.exports.checkUser = function(data){
 		console.log("return true!");
 		return false; 
 	});
+	connection.end(); 
+}
+// returns an array of courses 
+module.exports.getCourses = function(){
+	// sets up connection 
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	connection.query();
 }
