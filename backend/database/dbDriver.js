@@ -26,6 +26,7 @@ module.exports.checkUser = function(data){
 	connection.connect();
 	console.log(data);
 	connection.query("SELECT * FROM DisputifyDB.User WHERE type=? AND username=? AND password=?", data, function(error, results, fields){
+		console.log(connection.sql);
 		if(error){
 			throw error; 
 		}
@@ -45,5 +46,11 @@ module.exports.getCourses = function(){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
 	connection.connect();
-	connection.query();
+	connection.query("SELECT * FROM DisputifyDB.Courses", function(error, results, fields){
+		if(error){
+			throw error; 
+		}
+		return results; 
+	});
+	connection.end(); 
 }

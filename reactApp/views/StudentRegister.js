@@ -24,7 +24,7 @@ export default class StudentRegister extends React.Component{
 			|| this.state.password=="" || this.state.password==null){
 			return; 
 		}
-		const userData = ["student",this.state.username,this.state.password];
+		const userData = {type: "student",username: this.state.username,password: this.state.password};
 		
 		dbDriver.addUser(userData);
 	}

@@ -22,10 +22,13 @@ export default class LoginForm extends React.Component{
 		// checks for user provided data 
 		const loginData = ["student", this.state.username, this.state.password];
 		console.log(loginData);
+		console.log(dbDriver.checkUser(loginData));
 		if(dbDriver.checkUser(loginData)){
+			console.log("true!!!!!");
 			return true; 
 		}
 		else{
+			console.log("false!!!");
 			alert("Incorrect Username or Password");
 			return false; 
 		}

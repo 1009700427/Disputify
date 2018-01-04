@@ -1,17 +1,13 @@
 import React from "react"; 
 import ReactDOM from "react-dom"; 
 import { Link } from 'react-router-dom';
-import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
-
+import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem} from "react-bootstrap"; 
+import StudentCourseList from "../components/StudentCourseList";
 const dbDriver = require("../../backend/database/dbDriver.js");
 
 export default class StudentAssignmentList extends React.Component{
 	constructor(){
 		super(); 
-	}
-	// gets all courses as an array 
-	getCourses(){
-		courseList = dbDriver.getCourses(); 
 	}
 	render(){
 		return(
@@ -35,8 +31,7 @@ export default class StudentAssignmentList extends React.Component{
 						onChange={}
 					/>
 					<Button bsStyle="success" onChange={}></Button> 
-					<DropdownButton >
-					</DropdownButton> 
+					<StudentCourseList/>
 					<FormControl
 						type="text"
 						placeholder="Enter Assignment Title"
