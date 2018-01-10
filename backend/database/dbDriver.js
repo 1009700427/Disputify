@@ -45,12 +45,18 @@ module.exports.checkUser = function(data){
 module.exports.getCourses = function(){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
+	var temp = [];
 	connection.connect();
-	connection.query("SELECT * FROM DisputifyDB.Courses", function(error, results, fields){
+	connection.query("SELECT name FROM DisputifyDB.Courses", function(error, results, fields){
 		if(error){
 			throw error; 
 		}
-		return results; 
+		temp = JSON.parse(JSON.stringify(results));
+        console.log("temp: "+temp);
+        console.log(JSON.stringify(results));
+        return temp;
 	});
-	connection.end(); 
+	connection.end();
+    console.log("tem2: "+temp);
+	return temp;
 }

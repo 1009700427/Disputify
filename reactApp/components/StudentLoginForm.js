@@ -1,4 +1,5 @@
-import React from "react"; 
+import React from "react";
+import axios from 'axios';
 import ReactDOM from "react-dom"; 
 import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
 import { Link, Redirect } from 'react-router-dom';
@@ -43,6 +44,7 @@ export default class LoginForm extends React.Component{
 				connection.end();
 				console.log("return false!");
 				alert("Incorrect Username or Password"); 
+				return;
 			}
 			connection.end(); 
 			console.log("return true!");
