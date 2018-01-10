@@ -39,13 +39,6 @@ export default class StudentCourseList extends React.Component{
                 },
                 0);
         });
-
-		// setTimeout(function(){
-         //        console.log(this.courseList)
-         //        this.courses = (<DropdownButton title={this.dropdownTitle}>{this.courseList.map(this.getCourses)} </DropdownButton>)
-		// 		console.log("2ksjdfghksjdfgh");
-		// 	},
-		// 8000);
 	}
 	getCourses(title, i){
 		return (
@@ -53,56 +46,6 @@ export default class StudentCourseList extends React.Component{
 				{title.name}
 			</MenuItem>
 		);
-	}
-	renderHelper(callback1, callback2){
-		console.log("yoyoyoyoyo");
-		callback1(); 
-		callback2();
-	}
-	deepCopy(courseList, results){
-		var temp = [];
-        for(var i=0; i<results.length; i++){
-            temp.push(results[i].name);
-        }
-        console.log("in query");
-        courseList = JSON.parse(JSON.stringify(temp));
-        console.log(temp);
-        return courseList;
-	}
-	getCourseDOM(){
-		const dropdownTitle = (<Glyphicon glyph="user" />);
-		var that = this; 
-		var courseList = [];
-		// sets up connection 
-		var connection = mysql.createConnection(config);
-		connection.connect();
-		var courses; 
-
-        that.renderHelper(
-                dbDriver.getCourses()
-
-        , function(){
-        	for(var i=0; i<courseList.length; i++){
-        		courseList[i] = courseList[i].name;
-			}
-            console.log(courseList);
-            courses = (<DropdownButton title={dropdownTitle}>{courseList.map(that.getCourses)}</DropdownButton>);
-            console.log("second");
-            console.log(courses);
-            connection.end();
-            return (courses);
-        });
-		//return courses; 
-	}
-	getCourseList(callback){
-		this.courseList = dbDriver.getCourses();
-        console.log("getCourseList(callback)");
-        //callback && callback();
-	}
-	getCoursesHelper(){
-        setTimeout(() => this.courses = (<DropdownButton title={this.dropdownTitle}>{this.courseList.map(this.getCourses)}</DropdownButton>), 0);
-
-		console.log("getCoursesHelper()");
 	}
 	render(){
 		var that = this;
