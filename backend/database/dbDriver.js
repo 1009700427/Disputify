@@ -5,7 +5,7 @@ const config = {
 	user: 'root', 
 	password: 'abc', 
 	database: 'DisputifyDB'
-}
+};
 // adds user into database 
 module.exports.addUser = function(data){
 	// sets up connection 
@@ -18,7 +18,7 @@ module.exports.addUser = function(data){
 			}
 	});
 	connection.end(); 
-}
+};
 // checks for username and password 
 module.exports.checkUser = function(data){
 	// sets up connection 
@@ -40,9 +40,9 @@ module.exports.checkUser = function(data){
 		return true; 
 	});
 	connection.end(); 
-}
+};
 // returns an array of courses 
-module.exports.getCourses = function(){
+module.exports.getCourses = function(callback){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
 	var temp = [];
@@ -52,11 +52,39 @@ module.exports.getCourses = function(){
 			throw error; 
 		}
 		temp = JSON.parse(JSON.stringify(results));
-        console.log("temp: "+temp);
+        callback & callback(temp);
         console.log(JSON.stringify(results));
-        return temp;
 	});
 	connection.end();
-    console.log("tem2: "+temp);
-	return temp;
+};
+// returns an array of all assignments of a particular user
+module.exports.getAllAssignments = function(callback){
+	// sets up connection
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	var temp = [];
+	connection.query("SELECT name, description FROM DisputifyDB.Assignments", function(error, results, fields){
+		if(error){
+			throw error;
+		}
+		temp = JSON.stringify(results);
+        callback & callback(temp);
+	});
+    connection.end();
+};
+// returns an array of all assignments that contains a particular string title
+module.exports.getAssignmentsByName = function(assignmentName, callback){
+	// sets up connection
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	var temp = [];
+	console.log("Assignmentname: "+assignmentName);
+	connection.query("SELECT name, description FROM DisputifyDB.Assignments WHERE name LIKE '%"+assignmentName+"%'", function(error, results, fields){
+		if(error){
+			throw error;
+		}
+		temp = JSON.stringify(results);
+		callback & callback(temp);
+	});
+	connection.end();
 }

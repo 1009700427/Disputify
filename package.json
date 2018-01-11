@@ -48,6 +48,7 @@
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "mysql": "^2.15.0",
+    "querystring": "^0.2.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.2.0",

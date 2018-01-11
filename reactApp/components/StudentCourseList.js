@@ -13,61 +13,48 @@ const config = {
 export default class StudentCourseList extends React.Component{
 	constructor(){
 		super();
+		var that = this;
 		this.state = {
-			courseList: [],
-            dropdownTitle: (<Glyphicon glyph="user" />),
+			courseList: [""],
+            // dropdownTitle: (<Glyphicon glyph="user" title="Dropdown"/>),
+            dropdownTitle: "",
 			finalResult: null,
 			fireReturn: false
 		}
         var connection = mysql.createConnection(config);
         connection.connect();
         var that = this;
-        connection.query("SELECT name FROM DisputifyDB.Courses", function(error, results, fields){
-            if(error){
-                throw error;
-            }
-            console.log("this is not right");
-            this.courseList = JSON.parse(JSON.stringify(results));
-            console.log("temp: "+this.courseList);
-            console.log(JSON.stringify(results));
-            setTimeout(function(){
-            		console.log(JSON.parse(JSON.stringify(results)));
-            		that.setState({finalResult: results,
-									fireReturn: true});
-                    //this.courses = (<DropdownButton title={this.dropdownTitle}>{JSON.parse(JSON.stringify(results)).map(that.getCourses)} </DropdownButton>)
-                    console.log("2ksjdfghksjdfgh");
-                },
-                0);
-        });
+        dbDriver.getCourses((result) => {
+            that.setState({finalResult: result,
+				fireReturn: true,
+				dropdownTitle: result[0].name});
+            console.log(result);
+		});
 	}
 	getCourses(title, i){
 		return (
-			<MenuItem eventKey={i}>
+			<MenuItem eventKey={i} key={i}>
 				{title.name}
 			</MenuItem>
 		);
 	}
+	handleSelect(e){
+		// const choice = e.target.value;
+		// document.getElementById("courseDropdown").title = choice;
+		var val = this.state.finalResult[e].name;
+		this.setState({
+			dropdownTitle: val
+		});
+		console.log(e);
+	}
 	render(){
 		var that = this;
 		return(
-			<div>
+			<div class="dropdown">
 				{
-                    this.state.fireReturn && 	<DropdownButton title={this.state.dropdownTitle}>{JSON.parse(JSON.stringify(this.state.finalResult)).map(that.getCourses)} </DropdownButton>
+                    this.state.fireReturn && <DropdownButton title={this.state.dropdownTitle} key={1} id="courseDropdown" onSelect={(e) => this.handleSelect(e)}>{JSON.parse(JSON.stringify(this.state.finalResult)).map(that.getCourses)} </DropdownButton>
                 }
 			</div>
 		);
-		//this.getCourseList();
-        //setTimeout(() => this.getCoursesHelper(), 0);
-		//var courseList = ["CSCI103", "CSCI104", "CSCI201", "EE109"];
-
-		// this.renderHelper(()=>(that.courseList = dbDriver.getCourses()),
-		// 	()=>(courses = (<DropdownButton title={dropdownTitle}>{that.courseList.map(this.getCourses)}</DropdownButton>))
-		// );
-        //this.courses = (<DropdownButton title={dropdownTitle}>{that.courseList.map(this.getCourses)}</DropdownButton>)
-		// courseList = dbDriver.getCourses();
-		// var courses = (<DropdownButton title={dropdownTitle}>{courseList.map(this.getCourses)}</DropdownButton>);
-
-		//return (this.getCourseDOM());
-		//return (<h5>123</h5>);
 	}
 }

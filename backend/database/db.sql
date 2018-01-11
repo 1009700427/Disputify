@@ -15,9 +15,17 @@ CREATE TABLE Courses(
     `name` VARCHAR(100)
 );
 
+CREATE TABLE Students(
+	studentID INT(11)  PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(100)
+);
+
 CREATE TABLE Assignments(
 	assignmentID INT(11) PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(100), 
+    description VARCHAR(500), 
 	courseID INT(11),
-    FOREIGN KEY fk1(courseID) REFERENCES Courses(courseID)
-);
+    studentID INT(11), 
+    FOREIGN KEY fk1(courseID) REFERENCES Courses(courseID),
+    FOREIGN KEY fk2(studentID) REFERENCES Students(studentID)
+);	
