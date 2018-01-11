@@ -22,12 +22,18 @@ app.get('/showAll', function(req, res){
 });
 // returns assignments of designated names
 app.get('/searchAssignment', function(req, res){
-    // var temp = [];
-    // temp.push(req.query.assignmentTitle);
     console.log("req.query: "+req.query);
     console.log("in server: "+req.query.assignmentTitle);
     dbDriver.getAssignmentsByName(req.query.assignmentTitle, (result)=>{
         console.log("In /searchAssignment");
+        console.log(result);
+        res.send(result);
+    });
+});
+// returns the particular assignment according to the given id
+app.get('/assignment', function(req, res){
+    dbDriver.getAssignmentByExactName(req.query.name, (result)=>{
+        console.log("In /assignment");
         console.log(result);
         res.send(result);
     });

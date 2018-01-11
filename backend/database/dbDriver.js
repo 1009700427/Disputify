@@ -87,4 +87,20 @@ module.exports.getAssignmentsByName = function(assignmentName, callback){
 		callback & callback(temp);
 	});
 	connection.end();
-}
+};
+// returns the assignment that contains the given id number
+module.exports.getAssignmentByExactName = function(name,callback){
+	// sets up connection
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	var temp = [];
+	temp.push(name);
+	console.log("Name: "+name);
+	connection.query("SELECT name, description, courseID FROM DisputifyDB.Assignments WHERE name =?", temp, function(error, results, fields){
+		if(error){
+			throw error;
+		}
+		callback & callback(JSON.stringify(results));
+	});
+	connection.end();
+};

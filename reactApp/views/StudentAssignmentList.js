@@ -83,7 +83,7 @@ export default class StudentAssignmentList extends React.Component{
 					{
 						this.state.assignments.map((assignmentObj, i) => {
 							return(
-								<div key={i} class="list-item" >
+								<div key={i} class="list-item" onClick={()=>this.props.history.push('/assignment/'+assignmentObj.name)}>
 									<div className="list-header">
 										{assignmentObj.name}
 									</div>
