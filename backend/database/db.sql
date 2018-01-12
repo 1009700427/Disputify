@@ -26,6 +26,7 @@ CREATE TABLE Assignments(
     description VARCHAR(500), 
 	courseID INT(11),
     studentID INT(11), 
+    disputeDescription VARCHAR(11), 
     FOREIGN KEY fk1(courseID) REFERENCES Courses(courseID),
     FOREIGN KEY fk2(studentID) REFERENCES Students(studentID)
 );	

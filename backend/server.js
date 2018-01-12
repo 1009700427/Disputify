@@ -38,6 +38,10 @@ app.get('/assignment', function(req, res){
         res.send(result);
     });
 });
+// sends dispute data to database
+app.get('/disputeSubmit', function(req, res){
+
+});
 // listens to port 3000
 http.listen(3000, function(){
     console.log("Express app listening on port 3000.");

@@ -104,3 +104,11 @@ module.exports.getAssignmentByExactName = function(name,callback){
 	});
 	connection.end();
 };
+// inserts dispute description to assignment
+module.exports.insertDisputeData = function (name, description, callback){
+	// sets yo connection
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	var temp = [name, description];
+	conn
+}
