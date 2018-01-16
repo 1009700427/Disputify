@@ -1,16 +1,17 @@
 import React from "react"; 
 import ReactDOM from "react-dom"; 
 import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../assets/stylesheets/login.less'
 const dbDriver = require("../../backend/database/dbDriver.js");
 
 export default class LoginForm extends React.Component{
-	constructor(){
-		super(); 
+	constructor(props){
+		super(props);
 		this.state = {
 			username: '', 
-			password: ''
+			password: '',
+			fireRedirect: false
 		}
 	}
 	onSubmit(event){ 
@@ -22,6 +23,23 @@ export default class LoginForm extends React.Component{
 		}
 		// checks for user provided data 
 		const loginData = ["faculty", this.state.username, this.state.password];
+		var that = this;
+		if(dbDriver.checkUser((result) => {
+				if(result){
+					that.setState({
+						fireRedirect: true
+					});
+					console.log(that.props);
+				}
+				else {
+                    alert("Incorrect Username or Password");
+				}
+			}))
+
+
+
+
+
 		if(dbDriver.checkUser(loginData)){
 			return true; 
 		}
@@ -66,6 +84,13 @@ export default class LoginForm extends React.Component{
 			    </Link>
 			    <div id="err-message">
 			    </div>
+                {
+                    this.state.fireRedirect && (<Redirect to={{
+                    	pathname: '/facultyCourseList',
+						state: {username: this.state.username}
+					}}/>)
+					//this.state.fireRedirect && this.props.history.push('/facultyCourseList/'+this.state.username)
+                }
 			</form> 
 		);
 	}

@@ -39,8 +39,6 @@ export default class StudentCourseList extends React.Component{
 		);
 	}
 	handleSelect(e){
-		// const choice = e.target.value;
-		// document.getElementById("courseDropdown").title = choice;
 		var val = this.state.finalResult[e].name;
 		this.setState({
 			dropdownTitle: val

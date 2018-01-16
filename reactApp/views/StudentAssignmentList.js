@@ -12,7 +12,8 @@ export default class StudentAssignmentList extends React.Component{
 		this.state = {
             assignmentTitle: '',
 			viewAssignmentTitle: '',
-            assignments: []
+            assignments: [],
+			username: this.props.location.state.username
 		}
 	}
 	logOutUser(){
@@ -59,13 +60,13 @@ export default class StudentAssignmentList extends React.Component{
 			<div class="student-assignment-list-page">
 				<div class="student-assignment-list-header">
 					<h2>
-						Assignment List 
+						Welcome, {this.state.username}
 					</h2> 
 					<Link to='/'>
 						<Button bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>
 					</Link>					
 					<div class="labels">
-						<h5>View Assignments</h5>
+						<h5>Filter Assignments</h5>
 						<h5>Show Assignments by Courses</h5>
 					</div> 
 					<div class="space"></div>

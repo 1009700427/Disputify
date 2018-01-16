@@ -92,7 +92,10 @@ export default class LoginForm extends React.Component{
 				    </div>
 				</form> 
 				{
-					fireRedirect && (<Redirect to='/studentAssignmentList'/>)
+					fireRedirect && (<Redirect to={{
+						pathname: '/studentAssignmentList',
+						state: {username: this.state.username}
+					}}/>)
 				}
 			</div> 
 		);

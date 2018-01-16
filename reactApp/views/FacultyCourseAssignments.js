@@ -1,0 +1,41 @@
+/**
+ * Created by siyuanxu on 1/15/18.
+ */
+import React from "react";
+import axios from "axios";
+import { FormGroup, FormControl, ControlLabel, Button, Modal} from "react-bootstrap";
+
+export default class Course extends React.Component{
+    constructor(){
+        super();
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+        this.state = {
+            name: "",
+            description: "",
+            showModal: false,
+            disputeDescription: ""
+        }
+    }
+    // handles showing the modal
+    handleShow(){
+        this.setState({
+            showModal: true
+        });
+    }
+    // handles hiding the modal
+    handleClose(){
+        this.setState({
+            showModal: false
+        });
+    }
+    render(){
+        var that = this;
+        return(
+            <div class="course-assignments">
+                {this.state.name}<br/>
+
+            </div>
+        );
+    }
+}

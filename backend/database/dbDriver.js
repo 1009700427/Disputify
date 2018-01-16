@@ -20,7 +20,7 @@ module.exports.addUser = function(data){
 	connection.end(); 
 };
 // checks for username and password 
-module.exports.checkUser = function(data){
+module.exports.checkUser = function(data, callback){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
 	connection.connect();
@@ -33,11 +33,11 @@ module.exports.checkUser = function(data){
 		if(results.length==0){
 			connection.end();
 			console.log("return false!"); 
-			return false; 
+			callback(false);
 		}
 		connection.end(); 
 		console.log("return true!");
-		return true; 
+		callback(true);
 	});
 	connection.end(); 
 };
@@ -111,4 +111,20 @@ module.exports.insertDisputeData = function (name, description, callback){
 	connection.connect();
 	var temp = [name, description];
 	conn
-}
+};
+// returns an array of courses
+module.exports.getFacultyCourses = function(callback){
+    // sets up connection
+    var connection = mysql.createConnection(config);
+    var temp = [];
+    connection.connect();
+    connection.query("SELECT name FROM DisputifyDB.Courses", function(error, results, fields){
+        if(error){
+            throw error;
+        }
+        temp = JSON.parse(JSON.stringify(results));
+        callback & callback(temp);
+        console.log(JSON.stringify(results));
+    });
+    connection.end();
+};
