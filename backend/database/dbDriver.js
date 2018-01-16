@@ -33,11 +33,12 @@ module.exports.checkUser = function(data, callback){
 		if(results.length==0){
 			connection.end();
 			console.log("return false!"); 
-			callback(false);
+			callback(false, results);
 		}
 		connection.end(); 
 		console.log("return true!");
-		callback(true);
+		console.log(results);
+		callback(true, results);
 	});
 	connection.end(); 
 };

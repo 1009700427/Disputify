@@ -11,7 +11,8 @@ export default class LoginForm extends React.Component{
 		this.state = {
 			username: '', 
 			password: '',
-			fireRedirect: false
+			fireRedirect: false,
+			name: ''
 		}
 	}
 	onSubmit(event){ 
@@ -24,9 +25,10 @@ export default class LoginForm extends React.Component{
 		// checks for user provided data 
 		const loginData = ["faculty", this.state.username, this.state.password];
 		var that = this;
-		if(dbDriver.checkUser((result) => {
+		if(dbDriver.checkUser(loginData, (result, arr) => {
 				if(result){
 					that.setState({
+						name: arr[0].name,
 						fireRedirect: true
 					});
 					console.log(that.props);
@@ -52,7 +54,7 @@ export default class LoginForm extends React.Component{
 		return (
 			<form onSubmit={(event) => this.onSubmit(event)}>
 				<FormGroup controlId="formBasicText">
-				</FormGroup> 
+				</FormGroup>
 				<ControlLabel>Username <FormControl
 		            type="text"
 		            placeholder="Enter Username"
@@ -87,9 +89,11 @@ export default class LoginForm extends React.Component{
                 {
                     this.state.fireRedirect && (<Redirect to={{
                     	pathname: '/facultyCourseList',
-						state: {username: this.state.username}
+						state: {
+                    		username: this.state.username,
+							name: this.state.name
+						}
 					}}/>)
-					//this.state.fireRedirect && this.props.history.push('/facultyCourseList/'+this.state.username)
                 }
 			</form> 
 		);

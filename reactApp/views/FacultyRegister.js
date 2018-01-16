@@ -9,7 +9,8 @@ export default class FacultyRegister extends React.Component{
 		this.state = {
 			username: '',
 			password: '',
-			repeatPassword: ''
+			repeatPassword: '',
+			name: ''
 		}
 	}
 
@@ -26,8 +27,9 @@ export default class FacultyRegister extends React.Component{
 		const userData = {
 			type: "faculty", 
 			username: this.state.username, 
-			password: this.state.password
-		}
+			password: this.state.password,
+			name: this.state.name
+		};
 		dbDriver.addUser(userData);
 	}
 
@@ -37,6 +39,12 @@ export default class FacultyRegister extends React.Component{
 				<div class="login-wrapper">
 					<h2>Faculty Register</h2> 
 					<form action="/" method="POST" onSubmit={(event) => this.onSubmit(event)}>
+						<ControlLabel>Name <FormControl
+							type="text"
+							placeholder="Enter Name"
+							onChange={(e) => this.setState({name: e.target.value})}
+						/>
+						</ControlLabel><br/>
 						<ControlLabel>Username <FormControl
 				            type="text"
 				            placeholder="Enter Username"

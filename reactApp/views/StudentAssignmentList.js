@@ -13,11 +13,23 @@ export default class StudentAssignmentList extends React.Component{
             assignmentTitle: '',
 			viewAssignmentTitle: '',
             assignments: [],
-			username: this.props.location.state.username
+			username: this.props.location.state.username,
+			name: this.props.location.state.name
 		}
 	}
 	logOutUser(){
-
+		var that = this;
+		axios.get("http://localhost:3000/logout", {
+			params: {
+				userType: "student"
+			}
+		})
+			.then(resp => {
+				console.log("Logged out");
+			})
+			.catch(err => {
+				console.log("Error: Failed to logout");
+			});
 	}
 	searchAssignmentByName(assignmentName){
 		var that = this;
@@ -60,7 +72,7 @@ export default class StudentAssignmentList extends React.Component{
 			<div class="student-assignment-list-page">
 				<div class="student-assignment-list-header">
 					<h2>
-						Welcome, {this.state.username}
+						Welcome, {this.state.name}
 					</h2> 
 					<Link to='/'>
 						<Button bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>

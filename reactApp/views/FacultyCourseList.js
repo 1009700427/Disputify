@@ -14,7 +14,8 @@ export default class FacultyCourseList extends React.Component{
             courseTitle: "",
             courses: [],
             assignments: [],
-            facultyUsername: this.props.location.state.username
+            facultyUsername: this.props.location.state.username,
+            name: this.props.location.state.name
         }
     }
     logOutUser(){
@@ -59,7 +60,7 @@ export default class FacultyCourseList extends React.Component{
         return(
             <div class="faculty-course-list-page">
                 <div class="faculty-course-list-header">
-                    <h2>Welcome, {this.state.facultyUsername}</h2>
+                    <h2>Welcome, {this.state.name}</h2>
                     <Link to='/'>
                         <Button bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>
                     </Link>

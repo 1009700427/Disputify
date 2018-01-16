@@ -18,6 +18,7 @@ export default class LoginForm extends React.Component{
 		this.state = {
 			username: '', 
 			password: '',
+			name: '',
 			fireRedirect: false
 		}
 	}
@@ -48,6 +49,7 @@ export default class LoginForm extends React.Component{
 			}
 			connection.end(); 
 			console.log("return true!");
+			that.setState({name: results[0].name});
 			that.setState({fireRedirect: true});
 			console.log("state: "+that.state.fireRedirect);
 		});
@@ -58,7 +60,7 @@ export default class LoginForm extends React.Component{
 			<div> 
 				<form method="POST" onSubmit={(event) => this.onSubmit(event)}>
 					<FormGroup controlId="formBasicText">
-					</FormGroup> 
+					</FormGroup>
 					<ControlLabel>Username <FormControl
 			            type="text"
 			            placeholder="Enter Username"
@@ -94,7 +96,10 @@ export default class LoginForm extends React.Component{
 				{
 					fireRedirect && (<Redirect to={{
 						pathname: '/studentAssignmentList',
-						state: {username: this.state.username}
+						state: {
+							username: this.state.username,
+							name: this.state.name
+						}
 					}}/>)
 				}
 			</div> 
