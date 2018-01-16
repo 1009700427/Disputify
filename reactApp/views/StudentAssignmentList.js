@@ -95,8 +95,13 @@ export default class StudentAssignmentList extends React.Component{
 					<Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
 					{
 						this.state.assignments.map((assignmentObj, i) => {
+							console.log(this.state.name);
 							return(
-								<div key={i} class="list-item" onClick={()=>this.props.history.push('/assignment/'+assignmentObj.name)}>
+								<div key={i} class="list-item" onClick={()=>{
+                                    console.log(this.state.name);
+                                    console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name);
+                                    this.props.history.push('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name)
+								}}>
 									<div className="list-header">
 										{assignmentObj.name}
 									</div>

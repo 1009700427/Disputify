@@ -4,19 +4,22 @@
 import React from "react";
 import axios from "axios";
 import { FormGroup, FormControl, ControlLabel, Button, Modal} from "react-bootstrap";
-
+import { Redirect } from 'react-router-dom';
 import ReactDOM from "react-dom";
 
 export default class Assignment extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.state = {
             name: "",
             description: "",
             showModal: false,
-            disputeDescription: ""
+            disputeDescription: "",
+            username: "",
+            realName: "",
+            fireRedirect: false
         }
     }
     // handles showing the modal
@@ -36,7 +39,10 @@ export default class Assignment extends React.Component{
         var that = this;
         axios.get("http://localhost:3000/disputeSubmit", {
             params: {
-                disputeDescription: that.state.disputeDescription
+                assignmentName: that.state.name,
+                assignmentDescription: that.state.description,
+                disputeDescription: that.state.disputeDescription,
+                username: that.state.username
             }
         })
             .then(resp => {
@@ -61,9 +67,13 @@ export default class Assignment extends React.Component{
         })
             .then(resp => {
                 console.log(resp);
+                //console.log("realName: "+realName);
+                console.log(that.props);
                 that.setState({
                     name: resp.data[0].name,
-                    description: resp.data[0].description
+                    description: resp.data[0].description,
+                    username: that.props.match.params.username,
+                    realName: that.props.match.params.realName
                 });
             })
             .catch(err => {
@@ -75,7 +85,15 @@ export default class Assignment extends React.Component{
         var that = this;
         return(
             <div class="Assignment">
-                {this.state.name}<br/>{this.state.description}
+                <Button bsStyle="success" onClick={() => {
+                    console.log(this.props);
+                    this.setState({
+                        fireRedirect: true
+                    });
+                }}>
+                    Go Back
+                </Button><br/>
+                {this.state.name}<br/>{this.state.description}<br/>
                 <Button bsStyle="success" onClick={() => this.handleShow()}>
                     Raise Dispute
                 </Button>
@@ -99,6 +117,15 @@ export default class Assignment extends React.Component{
                         <Button onClick={this.handleClose}>Close</Button>
                     </Modal.Footer>
                 </Modal>
+                {
+                    this.state.fireRedirect && (<Redirect to={{
+                        pathname: '/studentAssignmentList',
+                        state: {
+                            username: this.state.username,
+                            name: this.state.realName
+                        }
+                    }}/>)
+                }
             </div>
         );
     }

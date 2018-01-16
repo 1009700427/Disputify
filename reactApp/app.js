@@ -20,7 +20,7 @@ const router = (
   	<HashRouter history={history}>
   		<div>
   			<Route path="/" exact component={AccountType}></Route>
-			<Route path="/assignment/:name" component={Assignment}></Route>
+			<Route path="/assignment/:name/:username/:realName" component={Assignment}></Route>
 			<Route path="/course/:name" component={Course}></Route>
 			{/*<Route path="/dispute/:description" component={Dispute}></Route>*/}
 			<Route path="/studentLogin" exact component={StudentLogin}></Route>

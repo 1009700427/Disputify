@@ -19,7 +19,80 @@ module.exports.addUser = function(data){
 	});
 	connection.end(); 
 };
-// checks for username and password 
+function getAssignmentIDByName(assignmentName, callback)
+{
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var assignmentIDQuery = 'SELECT assignmentID FROM DisputifyDB.Assignments WHERE name = ' + connection.escape(assignmentName);
+    connection.query(assignmentIDQuery, (error, results, fields) => {
+        if(error){
+            throw error;
+        }
+        console.log(results);
+        console.log(results[0].assignmentID);
+        var assignmentID = results[0].assignmentID;
+        callback(assignmentID);
+    });
+    connection.end();
+}
+function getUserIDByName(assignmentID, username, callback)
+{
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var userIDQuery = 'SELECT userID FROM DisputifyDB.User WHERE username = ' + connection.escape(username);
+    connection.query(userIDQuery, (error, results, fields) => {
+        if(error){
+            throw error;
+        }
+        console.log(results);
+        console.log(results[0].userID);
+        userID = results[0].userID;
+        callback(assignmentID, userID);
+    });
+    connection.end();
+}
+// inserts dispute description to assignment
+module.exports.insertDisputeData = function (assignmentName, assignmentDescription, disputeDescription, username, callback){
+    // sets yo connection
+    var connection = mysql.createConnection(config);
+    connection.connect();
+
+
+	var assignmentID = -1;
+	var userID = -1;
+
+	getAssignmentIDByName(assignmentName, (assignmentID) => getUserIDByName(assignmentID, username, (assignmentID, userID) => {
+        var data = {
+            description: disputeDescription,
+            assignmentID: assignmentID,
+            userID: userID
+        };
+        var connection = mysql.createConnection(config);
+        connection.connect();
+        connection.query("INSERT INTO DisputifyDB.Dispute SET ?", {
+            description: disputeDescription,
+            assignmentID: assignmentID,
+            userID: userID
+        } ,(error, results, fields) => {
+            console.log(data);
+            if (error) {
+                //console.log(connection);
+
+                throw error;
+            }
+            callback();
+        });
+
+        connection.end();
+	}));
+
+
+
+
+
+
+};
+// checks for username and password
 module.exports.checkUser = function(data, callback){
 	// sets up connection 
 	var connection = mysql.createConnection(config);
@@ -104,14 +177,6 @@ module.exports.getAssignmentByExactName = function(name,callback){
 		callback & callback(JSON.stringify(results));
 	});
 	connection.end();
-};
-// inserts dispute description to assignment
-module.exports.insertDisputeData = function (name, description, callback){
-	// sets yo connection
-	var connection = mysql.createConnection(config);
-	connection.connect();
-	var temp = [name, description];
-	conn
 };
 // returns an array of courses
 module.exports.getFacultyCourses = function(callback){

@@ -40,7 +40,13 @@ app.get('/assignment', function(req, res){
 });
 // sends dispute data to database
 app.get('/disputeSubmit', function(req, res){
-
+    var assignmentName = req.query.assignmentName;
+    var assignmentDescription = req.query.assignmentDescription;
+    var disputeDescription = req.query.disputeDescription;
+    var username = req.query.username;
+    dbDriver.insertDisputeData(assignmentName, assignmentDescription, disputeDescription, username, () => {
+        res.send("succeed");
+    });
 });
 // listens to port 3000
 http.listen(3000, function(){
