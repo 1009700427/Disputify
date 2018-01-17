@@ -31,6 +31,7 @@ CREATE TABLE Dispute(
     description VARCHAR(500),
     assignmentID INT(11), 
     userID INT(11), 
+    `status` VARCHAR(50), 
     FOREIGN KEY fk1(assignmentID) REFERENCES Assignments(assignmentID),
     FOREIGN KEY fk2(userID) REFERENCES `User`(userID)
 );

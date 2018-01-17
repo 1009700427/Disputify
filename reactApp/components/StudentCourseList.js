@@ -11,8 +11,8 @@ const config = {
 	database: 'DisputifyDB'
 }
 export default class StudentCourseList extends React.Component{
-	constructor(){
-		super();
+	constructor(props){
+		super(props);
 		var that = this;
 		this.state = {
 			courseList: [""],
@@ -20,7 +20,7 @@ export default class StudentCourseList extends React.Component{
             dropdownTitle: "",
 			finalResult: null,
 			fireReturn: false
-		}
+		};
         var connection = mysql.createConnection(config);
         connection.connect();
         var that = this;
@@ -28,6 +28,7 @@ export default class StudentCourseList extends React.Component{
             that.setState({finalResult: result,
 				fireReturn: true,
 				dropdownTitle: result[0].name});
+            this.props.handler(result[0].name);
             console.log(result);
 		});
 	}
@@ -38,11 +39,14 @@ export default class StudentCourseList extends React.Component{
 			</MenuItem>
 		);
 	}
+
 	handleSelect(e){
 		var val = this.state.finalResult[e].name;
 		this.setState({
 			dropdownTitle: val
 		});
+		this.props.handler(val);
+		console.log(val);
 		console.log(e);
 	}
 	render(){

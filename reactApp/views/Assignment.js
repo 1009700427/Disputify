@@ -50,6 +50,8 @@ export default class Assignment extends React.Component{
                     showModal: false
                 });
                 alert("Successfully Submitted Your Dispute!");
+                document.getElementById("dispute-status").innerHTML = "Dispute Unresolved";
+                document.getElementById("dispute-status").style.color = "red";
             })
             .catch(err => {
                 alert("Failed to Submit Your Dispute.");
@@ -93,6 +95,8 @@ export default class Assignment extends React.Component{
                 }}>
                     Go Back
                 </Button><br/>
+                <h2 id="dispute-status">No Dispute Submitted</h2>
+
                 {this.state.name}<br/>{this.state.description}<br/>
                 <Button bsStyle="success" onClick={() => this.handleShow()}>
                     Raise Dispute

@@ -7,6 +7,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap";
 import FacultyCourses from "../components/FacultyCourses.js";
+import StudentCourseList from "../components/StudentCourseList.js";
+
 export default class FacultyCourseList extends React.Component{
     constructor(props){
         super(props);
@@ -15,8 +17,10 @@ export default class FacultyCourseList extends React.Component{
             courses: [],
             assignments: [],
             facultyUsername: this.props.location.state.username,
-            name: this.props.location.state.name
+            name: this.props.location.state.name,
+            courseName: ""
         }
+        this.handler = this.handler.bind(this);
     }
     logOutUser(){
 
@@ -56,6 +60,28 @@ export default class FacultyCourseList extends React.Component{
                 console.log("Error: cannot retrieve assignments in showAll() ", err);
             });
     }
+    searchAssignmentByCourse(courseName){
+        var that = this;
+        console.log(courseName);
+        axios.get("http://localhost:3000/searchAssignmentByCourse", {
+            params: {
+                courseName: courseName
+            }
+        })
+            .then(resp => {
+                that.setState({
+                    courses: resp.data
+                });
+            })
+            .catch(err => {
+                console.log("Error: Cannot retrieve assignments in searchAssignmentByCourse(courseName)");
+            });
+    }
+    handler(coursename) {
+        this.setState({
+            courseName: coursename
+        });
+    }
     render(){
         return(
             <div class="faculty-course-list-page">
@@ -76,8 +102,8 @@ export default class FacultyCourseList extends React.Component{
                             onChange={(e) => this.setState({courseTitle: e.target.value})}
                         />
                         <Button bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
-                        <FacultyCourses/>
-                        <Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(courseName)}>Search {' '}<Glyphicon glyph="search" /></Button>
+                        <StudentCourseList handler={this.handler}/>
+                        <Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button>
                         <Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
                         {
                             this.state.courses.map((courseObj, i) => {

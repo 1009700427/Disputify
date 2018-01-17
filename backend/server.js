@@ -48,6 +48,13 @@ app.get('/disputeSubmit', function(req, res){
         res.send("succeed");
     });
 });
+// returns assignments by course name
+app.get('/searchAssignmentByCourse', (req, res) => {
+    var courseName = req.query.courseName;
+    dbDriver.getAssignmentByCourse(courseName, (result) => {
+        res.send(result);
+    });
+});
 // listens to port 3000
 http.listen(3000, function(){
     console.log("Express app listening on port 3000.");

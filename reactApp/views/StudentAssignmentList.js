@@ -14,8 +14,15 @@ export default class StudentAssignmentList extends React.Component{
 			viewAssignmentTitle: '',
             assignments: [],
 			username: this.props.location.state.username,
-			name: this.props.location.state.name
-		}
+			name: this.props.location.state.name,
+			courseName: ""
+		};
+        this.handler = this.handler.bind(this);
+	}
+	handler(coursename) {
+		this.setState({
+			courseName: coursename
+		});
 	}
 	logOutUser(){
 		var that = this;
@@ -52,6 +59,19 @@ export default class StudentAssignmentList extends React.Component{
 	searchAssignmentByCourse(courseName){
 		var that = this;
 		console.log(courseName);
+		axios.get("http://localhost:3000/searchAssignmentByCourse", {
+			params: {
+				courseName: courseName
+			}
+		})
+			.then(resp => {
+                that.setState({
+					assignments: resp.data
+				});
+            })
+			.catch(err => {
+				console.log("Error: Cannot retrieve assignments in searchAssignmentByCourse(courseName)");
+			});
 	}
 	showAll(){
 		var that = this;
@@ -90,8 +110,8 @@ export default class StudentAssignmentList extends React.Component{
 						onChange={(e) => this.setState({assignmentTitle: e.target.value})}
 					/>
 					<Button bsStyle="success" onClick={()=>this.searchAssignmentByName(this.state.assignmentTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
-					<StudentCourseList/>
-					<Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(courseName)}>Search {' '}<Glyphicon glyph="search" /></Button>
+					<StudentCourseList handler={this.handler}/>
+					<Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button>
 					<Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
 					{
 						this.state.assignments.map((assignmentObj, i) => {

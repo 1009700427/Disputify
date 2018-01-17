@@ -47,8 +47,21 @@ function getUserIDByName(assignmentID, username, callback)
         console.log(results);
         console.log(results[0].userID);
         userID = results[0].userID;
-        callback(assignmentID, userID);
+        callback && callback(assignmentID, userID);
     });
+    connection.end();
+}
+function getCourseIDByName(courseName, callback){
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var courseIDQuery = 'SELECT courseID FROM DisputifyDB.Courses WHERE name = ' + connection.escape(courseName);
+    connection.query(courseIDQuery, (error, results, fields) => {
+    	if(error){
+    		throw error;
+		}
+		var courseID = results[0].courseID;
+		callback && callback(courseID);
+	});
     connection.end();
 }
 // inserts dispute description to assignment
@@ -65,19 +78,14 @@ module.exports.insertDisputeData = function (assignmentName, assignmentDescripti
         var data = {
             description: disputeDescription,
             assignmentID: assignmentID,
-            userID: userID
+            userID: userID,
+			status: "unresolved"
         };
         var connection = mysql.createConnection(config);
         connection.connect();
-        connection.query("INSERT INTO DisputifyDB.Dispute SET ?", {
-            description: disputeDescription,
-            assignmentID: assignmentID,
-            userID: userID
-        } ,(error, results, fields) => {
+        connection.query("INSERT INTO DisputifyDB.Dispute SET ?", data ,(error, results, fields) => {
             console.log(data);
             if (error) {
-                //console.log(connection);
-
                 throw error;
             }
             callback();
@@ -85,11 +93,20 @@ module.exports.insertDisputeData = function (assignmentName, assignmentDescripti
 
         connection.end();
 	}));
-
-
-
-
-
+};
+// returns a list of assignments by course name
+module.exports.getAssignmentByCourse = function(courseName, callback){
+    getCourseIDByName(courseName, (courseID) => {
+    	var data = [courseID];
+        var connection = mysql.createConnection(config);
+        connection.connect();
+		connection.query("SELECT * FROM DisputifyDB.Assignments WHERE courseID = ?", data, (error, results, fields) => {
+			if(error){
+				throw error;
+			}
+			callback && callback(results);
+		});
+	});
 
 };
 // checks for username and password
