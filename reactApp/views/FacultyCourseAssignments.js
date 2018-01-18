@@ -5,13 +5,13 @@ import React from "react";
 import axios from "axios";
 import { FormGroup, FormControl, ControlLabel, Button, Modal} from "react-bootstrap";
 
-export default class Course extends React.Component{
+export default class FacultyCourseAssignments extends React.Component{
     constructor(){
         super();
         this.handleShow = this.handleShow.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.state = {
-            name: "",
+            name: "666",
             description: "",
             showModal: false,
             disputeDescription: ""
@@ -29,12 +29,14 @@ export default class Course extends React.Component{
             showModal: false
         });
     }
+    componentWillMount(){
+
+    }
     render(){
         var that = this;
         return(
             <div class="course-assignments">
                 {this.state.name}<br/>
-
             </div>
         );
     }

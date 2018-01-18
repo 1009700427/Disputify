@@ -64,6 +64,38 @@ function getCourseIDByName(courseName, callback){
 	});
     connection.end();
 }
+// gets all courses with given name
+module.exports.getCoursesByCourseName = function(courseName, callback){
+	var connection = mysql.createConnection(config);
+	connection.connect();
+	var courseQuery = "SELECT * FROM DisputifyDB.Courses WHERE name LIKE '%"+(courseName)+"%'";
+	connection.query(courseQuery, (error, results, fields) => {
+		if(error){
+			throw error;
+		}
+		callback && callback(results);
+	});
+};
+// returns a list of all courses
+module.exports.getAllCourses = function(callback){
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var courseQuery = "SELECT * FROM DisputifyDB.Courses";
+    connection.query(courseQuery, (error, results, fields) => {
+        if(error){
+            throw error;
+        }
+        callback && callback(results);
+    });
+};
+// gets disputes
+module.exports.getDisputes = function(courseName, callback){
+    getCourseIDByName(courseName, (courseID) => {
+        var connection = mysql.createConnection(config);
+        connection.connect();
+        var disputeQuery = "SELECT * FROM DisputifyDB.Dispute d, DisputifyDB.User WHERE courseID = " + connection.escape()
+	});
+};
 // inserts dispute description to assignment
 module.exports.insertDisputeData = function (assignmentName, assignmentDescription, disputeDescription, username, callback){
     // sets yo connection

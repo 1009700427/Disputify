@@ -10,8 +10,7 @@ import StudentAssignmentList from "./views/StudentAssignmentList.js";
 import Assignment from "./views/Assignment.js";
 import Course from "./views/FacultyCourseAssignments.js";
 import FacultyCourseList from "./views/FacultyCourseList.js";
-// import Dispute from "./views/Dispute.js";
-import { HashRouter, Route, IndexRoute } from "react-router-dom"; 
+import { HashRouter, Route, IndexRoute } from "react-router-dom";
 import './assets/stylesheets/main.less';
 
 const app = document.getElementById('root');

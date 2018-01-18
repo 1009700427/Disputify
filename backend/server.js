@@ -51,7 +51,27 @@ app.get('/disputeSubmit', function(req, res){
 // returns assignments by course name
 app.get('/searchAssignmentByCourse', (req, res) => {
     var courseName = req.query.courseName;
+    console.log("course name: " + courseName);
     dbDriver.getAssignmentByCourse(courseName, (result) => {
+        res.send(result);
+    });
+});
+// get courses by coursename
+app.get("/searchCourseByName", (req, res) => {
+    var courseName = req.query.courseName;
+    dbDriver.getCoursesByCourseName(courseName, (result) => {
+        res.send(result);
+    });
+});
+// Returns a list of all courses
+app.get("/showAllCourses", (req, res) => {
+    dbDriver.getAllCourses((result) => {
+        res.send(result);
+    });
+});
+app.get('/getDisputes', (req, res) => {
+    var courseName = req.query.courseName;
+    dbDriver.getDisputes(courseName, (result) => {
         res.send(result);
     });
 });

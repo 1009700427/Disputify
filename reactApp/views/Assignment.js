@@ -69,7 +69,6 @@ export default class Assignment extends React.Component{
         })
             .then(resp => {
                 console.log(resp);
-                //console.log("realName: "+realName);
                 console.log(that.props);
                 that.setState({
                     name: resp.data[0].name,
