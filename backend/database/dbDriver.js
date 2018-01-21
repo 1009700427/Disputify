@@ -88,16 +88,45 @@ module.exports.getAllCourses = function(callback){
         callback && callback(results);
     });
 };
+module.exports.handleResolve = function(disputeID, currentStatus, callback){
+    var connection = mysql.createConnection(config);
+    connection.connect();
+    var disputeQuery = "UPDATE DisputifyDB.Dispute SET status = ? WHERE disputeID = ?";
+    var data = [];
+    if(currentStatus=="resolved"){
+    	data = ["unresolved", disputeID];
+	}
+	else {
+        data = ["resolved", disputeID];
+	}
+	console.log(data);
+    connection.query(disputeQuery, data, (error, results, fields) => {
+    	if(error){
+    		throw error;
+		}
+		callback && callback(results);
+	});
+};
 // gets disputes
 module.exports.getDisputes = function(courseName, callback){
     getCourseIDByName(courseName, (courseID) => {
         var connection = mysql.createConnection(config);
         connection.connect();
-        var disputeQuery = "SELECT * FROM DisputifyDB.Dispute d, DisputifyDB.User WHERE courseID = " + connection.escape()
+        var data = [courseID];
+        console.log("CourseID: "+typeof(courseID.toString()));
+        var disputeQuery = "SELECT * FROM DisputifyDB.Dispute WHERE courseID = ?";
+        connection.query(disputeQuery, data, (error, results, fields) => {
+        	if(error){
+        		throw error;
+			}
+			console.log("Results: "+results[0].description);
+			callback && callback(results);
+		});
+        connection.end();
 	});
 };
 // inserts dispute description to assignment
-module.exports.insertDisputeData = function (assignmentName, assignmentDescription, disputeDescription, username, callback){
+module.exports.insertDisputeData = function (assignmentName, assignmentDescription, disputeDescription, username, courseID, callback){
     // sets yo connection
     var connection = mysql.createConnection(config);
     connection.connect();
@@ -111,7 +140,8 @@ module.exports.insertDisputeData = function (assignmentName, assignmentDescripti
             description: disputeDescription,
             assignmentID: assignmentID,
             userID: userID,
-			status: "unresolved"
+			status: "unresolved",
+            courseID: courseID
         };
         var connection = mysql.createConnection(config);
         connection.connect();
@@ -186,7 +216,7 @@ module.exports.getAllAssignments = function(callback){
 	var connection = mysql.createConnection(config);
 	connection.connect();
 	var temp = [];
-	connection.query("SELECT name, description FROM DisputifyDB.Assignments", function(error, results, fields){
+	connection.query("SELECT * FROM DisputifyDB.Assignments", function(error, results, fields){
 		if(error){
 			throw error;
 		}
@@ -202,7 +232,7 @@ module.exports.getAssignmentsByName = function(assignmentName, callback){
 	connection.connect();
 	var temp = [];
 	console.log("Assignmentname: "+assignmentName);
-	connection.query("SELECT name, description FROM DisputifyDB.Assignments WHERE name LIKE '%"+assignmentName+"%'", function(error, results, fields){
+	connection.query("SELECT * FROM DisputifyDB.Assignments WHERE name LIKE '%"+assignmentName+"%'", function(error, results, fields){
 		if(error){
 			throw error;
 		}

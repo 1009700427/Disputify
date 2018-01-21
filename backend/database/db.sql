@@ -29,9 +29,12 @@ CREATE TABLE Assignments(
 CREATE TABLE Dispute(
 	disputeID INT(11)  PRIMARY KEY AUTO_INCREMENT,
     description VARCHAR(500),
-    assignmentID INT(11), 
+    courseID INT(11), 
     userID INT(11), 
+    assignmentID INT(11), 
     `status` VARCHAR(50), 
-    FOREIGN KEY fk1(assignmentID) REFERENCES Assignments(assignmentID),
-    FOREIGN KEY fk2(userID) REFERENCES `User`(userID)
+    FOREIGN KEY fk1(courseID) REFERENCES Courses(courseID),
+    FOREIGN KEY fk2(userID) REFERENCES `User`(userID),
+	FOREIGN KEY fk3(assignmentID) REFERENCES Assignments(assignmentID)
+    
 );

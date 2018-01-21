@@ -119,8 +119,8 @@ export default class StudentAssignmentList extends React.Component{
 							return(
 								<div key={i} class="list-item" onClick={()=>{
                                     console.log(this.state.name);
-                                    console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name);
-                                    this.props.history.push('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name)
+                                    console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name+'/'+assignmentObj.courseID);
+                                    this.props.history.push('/assignment/'+assignmentObj.name+'/'+this.state.username+'/1/'+this.state.name)
 								}}>
 									<div className="list-header">
 										{assignmentObj.name}

@@ -19,7 +19,8 @@ export default class Assignment extends React.Component{
             disputeDescription: "",
             username: "",
             realName: "",
-            fireRedirect: false
+            fireRedirect: false,
+            courseID: ""
         }
     }
     // handles showing the modal
@@ -42,7 +43,8 @@ export default class Assignment extends React.Component{
                 assignmentName: that.state.name,
                 assignmentDescription: that.state.description,
                 disputeDescription: that.state.disputeDescription,
-                username: that.state.username
+                username: that.state.username,
+                courseID: that.state.courseID
             }
         })
             .then(resp => {
@@ -74,7 +76,8 @@ export default class Assignment extends React.Component{
                     name: resp.data[0].name,
                     description: resp.data[0].description,
                     username: that.props.match.params.username,
-                    realName: that.props.match.params.realName
+                    realName: that.props.match.params.realName,
+                    courseID: that.props.match.params.courseID
                 });
             })
             .catch(err => {

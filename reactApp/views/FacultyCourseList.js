@@ -24,13 +24,15 @@ export default class FacultyCourseList extends React.Component{
             courseName: "",
             currentCourseName: "",
             disputeList: [],
+            currentCourseName: "",
+            disputePopover: (
+                <Popover>
+                    <strong>Click to Indicate Resolve/Unresolve!</strong>
+                </Popover>
+            )
         };
         this.handler = this.handler.bind(this);
-        const disputePopover = (
-            <Popover>
-                <strong>Dispute Unresolved!</strong>
-            </Popover>
-        );
+
     }
     // handles showing the moda
     handleShow(){
@@ -86,8 +88,10 @@ export default class FacultyCourseList extends React.Component{
         })
             .then(resp => {
                 that.setState({
-                    disputeList: resp.data
+                    disputeList: resp.data,
+                    currentCourseName: courseName
                 });
+                //console.log(resp.data);
                 callback && callback();
             })
             .catch(err => {
@@ -108,13 +112,31 @@ export default class FacultyCourseList extends React.Component{
                 });
             })
             .catch(err => {
-                console.log("Error: Cannot retrieve assignments in searchAssignmentByCourse(courseName)");
+                console.log("Error: Cannot retrieve assignments in searchAssignmentByCourse(courseName)", err);
             });
     }
     handler(coursename) {
         this.setState({
             courseName: coursename
         });
+    }
+    handleResolve(disputeID, status){
+        var that = this;
+        axios.get("http://localhost:3000/handleResolve", {
+            params: {
+                disputeID: disputeID,
+                currentCourseName: that.state.currentCourseName,
+                currentResolveStatus: status
+            }
+        })
+            .then(resp => {
+                that.setState({
+                    disputeList: resp.data
+                });
+            })
+            .catch(err => {
+                console.log("Error: Cannot retrieve updated dispute list", err);
+            });
     }
     render(){
         return(
@@ -139,47 +161,19 @@ export default class FacultyCourseList extends React.Component{
                         <StudentCourseList handler={this.handler}/>
                         <Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
                         <Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
-                        <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>
-                                    {this.state.currentCourseName} Disputes
-                                </Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                {
-                                    this.state.disputeList.map((disputeObj, i) => {
-                                        return (
-                                            <div key={i} class="dispute-item">
-                                                <div class="dispute-header">
-                                                    {disputeObj.name}
-                                                </div>
-                                                <div class="dispute-description">
-                                                    {disputeObj.description}
-                                                </div>
-                                                <OverlayTrigger trigger="hover" placement="right" overlay={this.state.disputePopover}>
-                                                    <Button>Check Dispute Status</Button>
-                                                </OverlayTrigger>
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button onClick={this.handleClose}>Close</Button>
-                            </Modal.Footer>
-                        </Modal>
                         {
                             this.state.courses.map((courseObj, i) => {
                                 return(
                                     //<div key={i} class="list-item" onClick={()=>this.props.history.push('/course/'+courseObj.name)}>
-                                    <div key={i} class="list-item">
-                                        <div className="list-header" onClick={() => {
-                                            this.setState({
-                                                currentCourseName: courseObj.name
-                                            });
-                                            var that = this;
-                                            this.getDisputes(courseObj.name, ()=>that.handleShow());
-                                        }}>
+                                    <div key={i} class="list-item" onClick={() => {
+                                        this.setState({
+                                            currentCourseName: courseObj.name
+                                        });
+                                        var that = this;
+                                        this.getDisputes(courseObj.name, ()=>that.handleShow());
+                                        //this.handleShow()
+                                    }}>
+                                        <div className="list-header">
                                             {courseObj.name}
                                         </div>
                                         {
@@ -190,6 +184,35 @@ export default class FacultyCourseList extends React.Component{
                             })
                         }
                     </div>
+                    <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>
+                                {this.state.currentCourseName} Disputes
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            {
+                                this.state.disputeList.map((disputeObj, i) => {
+                                    return (
+                                        <div key={i} class="dispute-item">
+                                            <div class="dispute-header">
+                                                {disputeObj.name}
+                                            </div>
+                                            <div class="dispute-description">
+                                                {disputeObj.description}
+                                            </div>
+                                            <OverlayTrigger trigger="hover" placement="right" overlay={this.state.disputePopover}>
+                                                <Button onClick={() => this.handleResolve(disputeObj.disputeID, disputeObj.status)}>{disputeObj.status}</Button>
+                                            </OverlayTrigger>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button onClick={this.handleClose}>Close</Button>
+                        </Modal.Footer>
+                    </Modal>
                 </div>
             </div>
         );

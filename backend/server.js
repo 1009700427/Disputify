@@ -44,7 +44,8 @@ app.get('/disputeSubmit', function(req, res){
     var assignmentDescription = req.query.assignmentDescription;
     var disputeDescription = req.query.disputeDescription;
     var username = req.query.username;
-    dbDriver.insertDisputeData(assignmentName, assignmentDescription, disputeDescription, username, () => {
+    var courseID = req.query.courseID;
+    dbDriver.insertDisputeData(assignmentName, assignmentDescription, disputeDescription, username, courseID, () => {
         res.send("succeed");
     });
 });
@@ -72,8 +73,17 @@ app.get("/showAllCourses", (req, res) => {
 app.get('/getDisputes', (req, res) => {
     var courseName = req.query.courseName;
     dbDriver.getDisputes(courseName, (result) => {
+        console.log("In Server: "+result[0].description);
         res.send(result);
     });
+});
+app.get('/handleResolve', (req, res) => {
+    var disputeID = req.query.disputeID;
+    var courseName = req.query.currentCourseName;
+    var status = req.query.currentResolveStatus;
+    dbDriver.handleResolve(disputeID,status, () => dbDriver.getDisputes(courseName, (result) => {
+        res.send(result);
+    }));
 });
 // listens to port 3000
 http.listen(3000, function(){
