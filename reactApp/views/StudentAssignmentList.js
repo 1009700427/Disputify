@@ -106,35 +106,40 @@ export default class StudentAssignmentList extends React.Component{
 					<div class="space"></div>
 				</div> 
 				<div class="student-assignment-list-options">
-					<FormControl
-						type="text"
-						placeholder="Enter Assignment Title"
-						onChange={(e) => this.setState({assignmentTitle: e.target.value})}
-					/>
-					<Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByName(this.state.assignmentTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
-					<StudentCourseList handler={this.handler}/>
-					<Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
-					<Button class="button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
-					{
-						this.state.assignments.map((assignmentObj, i) => {
-							console.log(this.state.name);
-							return(
+					<ControlLabel class="item">
+						<FormControl
+							type="text"
+							placeholder="Enter Assignment Title"
+							onChange={(e) => this.setState({assignmentTitle: e.target.value})}
+							class="assignment-title-input"
+						/>
+					</ControlLabel>
+					<Button class="button item short-button margin-button1" bsStyle="success" onClick={()=>this.searchAssignmentByName(this.state.assignmentTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
+					<StudentCourseList class="item" handler={this.handler}/>
+					<Button class="button item short-button margin-button2" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
+					<Button class="button item short-button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button><br/>
+				</div>
+				<div class="assignment-info">
+                    {
+                        this.state.assignments.map((assignmentObj, i) => {
+                            console.log(this.state.name);
+                            return(
 								<div key={i} class="list-item" onClick={()=>{
                                     console.log(this.state.name);
                                     console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name+'/'+assignmentObj.courseID);
                                     this.props.history.push('/assignment/'+assignmentObj.name+'/'+this.state.username+'/1/'+this.state.name)
-								}}>
+                                }}>
 									<div className="list-header">
-										{assignmentObj.name}
+                                        {assignmentObj.name}
 									</div>
-									{
-										assignmentObj.description
-									}
+                                    {
+                                        assignmentObj.description
+                                    }
 								</div>
-							)
-						})
-					}
-				</div> 
+                            )
+                        })
+                    }
+				</div>
 			</div> 
 		);
 	}

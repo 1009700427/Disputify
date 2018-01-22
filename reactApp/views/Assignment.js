@@ -5,7 +5,7 @@ import React from "react";
 import axios from "axios";
 import { FormGroup, FormControl, ControlLabel, Button, Modal} from "react-bootstrap";
 import { Redirect } from 'react-router-dom';
-import ReactDOM from "react-dom";
+import '../assets/stylesheets/assignment.less'
 
 export default class Assignment extends React.Component{
     constructor(props){
@@ -88,50 +88,52 @@ export default class Assignment extends React.Component{
         console.log(this.props);
         var that = this;
         return(
-            <div class="Assignment">
-                <Button bsStyle="success"  class="button" onClick={() => {
-                    console.log(this.props);
-                    this.setState({
-                        fireRedirect: true
-                    });
-                }}>
-                    Go Back
-                </Button><br/>
-                <h2 id="dispute-status">No Dispute Submitted</h2>
+            <div class="assignment">
+                <div class="assignment-wrapper">
+                    <Button bsStyle="success"  class="button" onClick={() => {
+                        console.log(this.props);
+                        this.setState({
+                            fireRedirect: true
+                        });
+                    }}>
+                        Go Back
+                    </Button><br/>
+                    <h2 id="dispute-status">No Dispute Submitted</h2>
 
-                {this.state.name}<br/>{this.state.description}<br/>
-                <Button bsStyle="success" class="button" onClick={() => this.handleShow()}>
-                    Raise Dispute
-                </Button>
-                <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>
-                            Raise Dispute
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <h5>What is your problem?</h5>
-                        <FormGroup controlId="disputeTextArea">
-                            <ControlLabel>Description</ControlLabel>
-                            <FormControl componentClass="textarea" placeholder="Dispute Description" onChange={(e) => {
-                                this.setState({disputeDescription: e.target.value});
-                            }}/>
-                        </FormGroup>
-                        <Button bsStyle="success" class="button" onClick={() => this.handleSubmit()}>Submit Dispute</Button>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button class="button" onClick={this.handleClose}>Close</Button>
-                    </Modal.Footer>
-                </Modal>
-                {
-                    this.state.fireRedirect && (<Redirect to={{
-                        pathname: '/studentAssignmentList',
-                        state: {
-                            username: this.state.username,
-                            name: this.state.realName
-                        }
-                    }}/>)
-                }
+                    {this.state.name}<br/>{this.state.description}<br/>
+                    <Button bsStyle="success" class="button" onClick={() => this.handleShow()}>
+                        Raise Dispute
+                    </Button>
+                    <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>
+                                Raise Dispute
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <h5>What is your problem?</h5>
+                            <FormGroup controlId="disputeTextArea">
+                                <ControlLabel>Description</ControlLabel>
+                                <FormControl componentClass="textarea" placeholder="Dispute Description" onChange={(e) => {
+                                    this.setState({disputeDescription: e.target.value});
+                                }}/>
+                            </FormGroup>
+                            <Button bsStyle="success" class="button" onClick={() => this.handleSubmit()}>Submit Dispute</Button>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button class="button" onClick={this.handleClose}>Close</Button>
+                        </Modal.Footer>
+                    </Modal>
+                    {
+                        this.state.fireRedirect && (<Redirect to={{
+                            pathname: '/studentAssignmentList',
+                            state: {
+                                username: this.state.username,
+                                name: this.state.realName
+                            }
+                        }}/>)
+                    }
+                </div>
             </div>
         );
     }

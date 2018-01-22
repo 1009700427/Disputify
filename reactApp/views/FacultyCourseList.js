@@ -142,10 +142,13 @@ export default class FacultyCourseList extends React.Component{
         return(
             <div class="faculty-course-list-page">
                 <div class="faculty-course-list-header">
-                    <h2>Welcome, {this.state.name}</h2>
-                    <Link to='/'>
-                        <Button bsStyle="danger"  class="button"onClick={()=>this.logOutUser()}>Log Out</Button>
-                    </Link>
+                    <div class="title">
+                        <h2>Welcome, {this.state.name}
+                            <Link to='/'>
+                                <Button bsStyle="danger" class="button logout" onClick={()=>this.logOutUser()}>Log Out</Button>
+                            </Link>
+                        </h2>
+                    </div>
                     <div class="labels">
                         <h5>Filter Courses</h5>
                         <h5>Show Assignments by Courses</h5>
@@ -157,21 +160,19 @@ export default class FacultyCourseList extends React.Component{
                             placeholder="Enter Course Title"
                             onChange={(e) => this.setState({courseTitle: e.target.value})}
                         />
-                        <Button class="button" bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
+                        <Button class="button short-button margin-button1" bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
                         <StudentCourseList handler={this.handler}/>
-                        <Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
-                        <Button class="button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
+                        <Button class="button short-button margin-button2" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
+                        <Button class="button short-button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
                         {
                             this.state.courses.map((courseObj, i) => {
                                 return(
-                                    //<div key={i} class="list-item" onClick={()=>this.props.history.push('/course/'+courseObj.name)}>
                                     <div key={i} class="list-item" onClick={() => {
                                         this.setState({
                                             currentCourseName: courseObj.name
                                         });
                                         var that = this;
                                         this.getDisputes(courseObj.name, ()=>that.handleShow());
-                                        //this.handleShow()
                                     }}>
                                         <div className="list-header">
                                             {courseObj.name}
