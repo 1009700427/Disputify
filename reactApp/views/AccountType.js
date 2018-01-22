@@ -11,14 +11,14 @@ export default class Login extends React.Component{
 		return(
 			<div class="account-page">
 				<div class="account-wrapper">
-					<h2>Account Type</h2>
+					<h2>Welcome to Disputify</h2>
 					<Link to='/facultyLogin'>
-						<Button bsStyle="success">
+						<Button bsStyle="success" class="button">
 							Course Staff 
 						</Button> 
-					</Link> 
+					</Link> <br/>
 					<Link to='/studentLogin'>
-						<Button bsStyle="success">
+						<Button bsStyle="success" class="button">
 							Student 
 						</Button> 
 					</Link> 

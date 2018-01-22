@@ -46,7 +46,7 @@ export default class StudentCourseList extends React.Component{
             <div class="dropdown">
                 {
                     this.state.fireReturn &&
-                    <DropdownButton title={this.state.dropdownTitle} key={1}
+                    <DropdownButton class="button" title={this.state.dropdownTitle} key={1}
                                     id="courseDropdown"
                                     onSelect={(e) => this.handleSelect(e)}>{JSON.parse(JSON.stringify(this.state.finalResult)).map(that.getCourses)}
                     </DropdownButton>

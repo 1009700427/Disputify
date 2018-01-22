@@ -33,7 +33,7 @@ export default class StudentRegister extends React.Component{
 	render(){
 		return(
 			<div class="register-page">
-				<div class="login-wrapper">
+				<div class="register-wrapper">
 					<h2>Student Register</h2> 
 					<form action="/" method="POST" onSubmit={(event) => this.onSubmit(event)}>
 						<ControlLabel>Name <FormControl
@@ -66,12 +66,12 @@ export default class StudentRegister extends React.Component{
 		          			/>
 		          		</ControlLabel>
 		          		<br/>
-					    <Button type="submit" bsStyle="success">
+					    <Button type="submit" bsStyle="success" class="button">
 					      Register
 					    </Button>
 		          		<br/>
 		          		<Link to='/studentLogin'>
-					    	<Button bsStyle="primary">
+					    	<Button bsStyle="primary" class="button">
 					    		Cancel
 					    	</Button> 
 					    </Link>

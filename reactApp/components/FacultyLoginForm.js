@@ -69,18 +69,18 @@ export default class LoginForm extends React.Component{
           			/>
           		</ControlLabel>
           		<br/>
-			    <Button type="submit" bsStyle="success">
+			    <Button class="button" type="submit" bsStyle="success">
 			      Login
 			    </Button>
 			    <br/>
 			    <Link to='/facultyRegister'>
-			    	<Button bsStyle="primary">
+			    	<Button class="button" bsStyle="primary">
 			    		Register
 			    	</Button> 
 			    </Link>
 			    <br/>
 			    <Link to='/'>
-			    	<Button bsStyle="primary">
+			    	<Button class="button" bsStyle="primary">
 			    		Cancel
 			    	</Button> 
 			    </Link>

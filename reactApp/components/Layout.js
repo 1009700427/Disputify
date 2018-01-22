@@ -8,7 +8,7 @@ export default class Layout extends React.Component{
 		return (
 				<div class="navbar navbar-expand-lg navbar-light text-center" styles="background-color: #e3f2fd;">
 				<a class="navbar-brand center">Hello World!</a>
-				<Button bsStyle="primary">Primary</Button>
+				<Button class="button" bsStyle="primary">Primary</Button>
 				</div>
 		);
 	}

@@ -89,7 +89,7 @@ export default class Assignment extends React.Component{
         var that = this;
         return(
             <div class="Assignment">
-                <Button bsStyle="success" onClick={() => {
+                <Button bsStyle="success"  class="button" onClick={() => {
                     console.log(this.props);
                     this.setState({
                         fireRedirect: true
@@ -100,7 +100,7 @@ export default class Assignment extends React.Component{
                 <h2 id="dispute-status">No Dispute Submitted</h2>
 
                 {this.state.name}<br/>{this.state.description}<br/>
-                <Button bsStyle="success" onClick={() => this.handleShow()}>
+                <Button bsStyle="success" class="button" onClick={() => this.handleShow()}>
                     Raise Dispute
                 </Button>
                 <Modal show={this.state.showModal} onHide={() => this.handleClose()}>
@@ -117,10 +117,10 @@ export default class Assignment extends React.Component{
                                 this.setState({disputeDescription: e.target.value});
                             }}/>
                         </FormGroup>
-                        <Button bsStyle="success" onClick={() => this.handleSubmit()}>Submit Dispute</Button>
+                        <Button bsStyle="success" class="button" onClick={() => this.handleSubmit()}>Submit Dispute</Button>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleClose}>Close</Button>
+                        <Button class="button" onClick={this.handleClose}>Close</Button>
                     </Modal.Footer>
                 </Modal>
                 {

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap"; 
 import StudentCourseList from "../components/StudentCourseList";
 const dbDriver = require("../../backend/database/dbDriver.js");
-
+import '../assets/stylesheets/studentAssignmentList.less'
 export default class StudentAssignmentList extends React.Component{
 	constructor(props){
 		super(props); 
@@ -91,12 +91,14 @@ export default class StudentAssignmentList extends React.Component{
 		return(
 			<div class="student-assignment-list-page">
 				<div class="student-assignment-list-header">
-					<h2>
-						Welcome, {this.state.name}
-					</h2> 
-					<Link to='/'>
-						<Button bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>
-					</Link>					
+					<div class="title">
+						<h2>
+							Welcome, {this.state.name}
+							<Link to='/'>
+								<Button class="button logout" bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>
+							</Link>
+						</h2>
+					</div>
 					<div class="labels">
 						<h5>Filter Assignments</h5>
 						<h5>Show Assignments by Courses</h5>
@@ -109,10 +111,10 @@ export default class StudentAssignmentList extends React.Component{
 						placeholder="Enter Assignment Title"
 						onChange={(e) => this.setState({assignmentTitle: e.target.value})}
 					/>
-					<Button bsStyle="success" onClick={()=>this.searchAssignmentByName(this.state.assignmentTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
+					<Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByName(this.state.assignmentTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
 					<StudentCourseList handler={this.handler}/>
-					<Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
-					<Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
+					<Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
+					<Button class="button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
 					{
 						this.state.assignments.map((assignmentObj, i) => {
 							console.log(this.state.name);

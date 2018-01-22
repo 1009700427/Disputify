@@ -144,7 +144,7 @@ export default class FacultyCourseList extends React.Component{
                 <div class="faculty-course-list-header">
                     <h2>Welcome, {this.state.name}</h2>
                     <Link to='/'>
-                        <Button bsStyle="danger" onClick={()=>this.logOutUser()}>Log Out</Button>
+                        <Button bsStyle="danger"  class="button"onClick={()=>this.logOutUser()}>Log Out</Button>
                     </Link>
                     <div class="labels">
                         <h5>Filter Courses</h5>
@@ -157,10 +157,10 @@ export default class FacultyCourseList extends React.Component{
                             placeholder="Enter Course Title"
                             onChange={(e) => this.setState({courseTitle: e.target.value})}
                         />
-                        <Button bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
+                        <Button class="button" bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
                         <StudentCourseList handler={this.handler}/>
-                        <Button bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
-                        <Button bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
+                        <Button class="button" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
+                        <Button class="button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
                         {
                             this.state.courses.map((courseObj, i) => {
                                 return(
@@ -202,7 +202,7 @@ export default class FacultyCourseList extends React.Component{
                                                 {disputeObj.description}
                                             </div>
                                             <OverlayTrigger trigger="hover" placement="right" overlay={this.state.disputePopover}>
-                                                <Button onClick={() => this.handleResolve(disputeObj.disputeID, disputeObj.status)}>{disputeObj.status}</Button>
+                                                <Button class="button" onClick={() => this.handleResolve(disputeObj.disputeID, disputeObj.status)}>{disputeObj.status}</Button>
                                             </OverlayTrigger>
                                         </div>
                                     )
@@ -210,7 +210,7 @@ export default class FacultyCourseList extends React.Component{
                             }
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button onClick={this.handleClose}>Close</Button>
+                            <Button class="button" onClick={this.handleClose}>Close</Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
