@@ -1,7 +1,7 @@
-import React from "react"; 
+import React from "react";
 import ReactDOM from "react-dom";
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap"; 
 import StudentCourseList from "../components/StudentCourseList";
 const dbDriver = require("../../backend/database/dbDriver.js");
@@ -127,7 +127,12 @@ export default class StudentAssignmentList extends React.Component{
 								<div key={i} class="list-item" onClick={()=>{
                                     console.log(this.state.name);
                                     console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name+'/'+assignmentObj.courseID);
-                                    this.props.history.push('/assignment/'+assignmentObj.name+'/'+this.state.username+'/1/'+this.state.name)
+
+									this.setState({
+										fireRedirect: true,
+										objName: assignmentObj.name,
+										objCourseID: assignmentObj.courseID
+									});
                                 }}>
 									<div className="list-header">
                                         {assignmentObj.name}
@@ -140,6 +145,9 @@ export default class StudentAssignmentList extends React.Component{
                         })
                     }
 				</div>
+				{
+					this.state.fireRedirect && (<Redirect to={{pathname: '/assignment/'+this.state.objName+'/'+this.state.username+'/'+this.state.name+'/'+this.state.objCourseID}}></Redirect>)
+                }
 			</div> 
 		);
 	}

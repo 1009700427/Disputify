@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon, Modal, OverlayTrigger, Popover} from "react-bootstrap";
 import FacultyCourses from "../components/FacultyCourses.js";
 import StudentCourseList from "../components/StudentCourseList.js";
+import '../assets/stylesheets/facultyCourseList.less';
 
 export default class FacultyCourseList extends React.Component{
     constructor(props){
@@ -91,7 +92,6 @@ export default class FacultyCourseList extends React.Component{
                     disputeList: resp.data,
                     currentCourseName: courseName
                 });
-                //console.log(resp.data);
                 callback && callback();
             })
             .catch(err => {
@@ -159,11 +159,14 @@ export default class FacultyCourseList extends React.Component{
                             type="text"
                             placeholder="Enter Course Title"
                             onChange={(e) => this.setState({courseTitle: e.target.value})}
+                            class="item"
                         />
-                        <Button class="button short-button margin-button1" bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
+                        <Button class="button short-button margin-button1 item" bsStyle="success" onClick={()=>this.searchCourseByName(this.state.courseTitle)}>Search {' '}<Glyphicon glyph="search" /></Button>
                         <StudentCourseList handler={this.handler}/>
-                        <Button class="button short-button margin-button2" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
-                        <Button class="button short-button" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
+                        <Button class="button short-button margin-button2 item" bsStyle="success" onClick={()=>this.searchAssignmentByCourse(this.state.courseName)}>Search {' '}<Glyphicon glyph="search" /></Button><br/>
+                        <Button class="button short-button item" bsStyle="success" onClick={()=>this.showAll()}>Show All {' '}<Glyphicon glyph="th" /></Button>
+                    </div>
+                    <div class="info">
                         {
                             this.state.courses.map((courseObj, i) => {
                                 return(
@@ -175,11 +178,13 @@ export default class FacultyCourseList extends React.Component{
                                         this.getDisputes(courseObj.name, ()=>that.handleShow());
                                     }}>
                                         <div className="list-header">
-                                            {courseObj.name}
+                                            <span> {courseObj.name} </span>
                                         </div>
+                                        <span>
                                         {
                                             courseObj.description
                                         }
+                                        </span>
                                     </div>
                                 )
                             })
@@ -197,7 +202,7 @@ export default class FacultyCourseList extends React.Component{
                                     return (
                                         <div key={i} class="dispute-item">
                                             <div class="dispute-header">
-                                                {disputeObj.name}
+                                                From {disputeObj.name}:
                                             </div>
                                             <div class="dispute-description">
                                                 {disputeObj.description}

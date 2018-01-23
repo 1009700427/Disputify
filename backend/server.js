@@ -73,7 +73,7 @@ app.get("/showAllCourses", (req, res) => {
 app.get('/getDisputes', (req, res) => {
     var courseName = req.query.courseName;
     dbDriver.getDisputes(courseName, (result) => {
-        console.log("In Server: "+result[0].description);
+        //console.log("In Server: "+result[0].description);
         res.send(result);
     });
 });

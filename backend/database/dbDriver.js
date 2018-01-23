@@ -59,7 +59,12 @@ function getCourseIDByName(courseName, callback){
     	if(error){
     		throw error;
 		}
-		var courseID = results[0].courseID;
+		if(results.length!=0){
+            var courseID = results[0].courseID;
+		}
+		else {
+            var courseID = null;
+		}
 		callback && callback(courseID);
 	});
     connection.end();
@@ -113,13 +118,12 @@ module.exports.getDisputes = function(courseName, callback){
         var connection = mysql.createConnection(config);
         connection.connect();
         var data = [courseID];
-        console.log("CourseID: "+typeof(courseID.toString()));
-        var disputeQuery = "SELECT * FROM DisputifyDB.Dispute WHERE courseID = ?";
+        var disputeQuery = "SELECT * FROM DisputifyDB.Dispute d, DisputifyDB.User u WHERE courseID = ? AND d.userID=u.userID";
+        console.log("sql: "+mysql.format(disputeQuery));
         connection.query(disputeQuery, data, (error, results, fields) => {
         	if(error){
         		throw error;
 			}
-			console.log("Results: "+results[0].description);
 			callback && callback(results);
 		});
         connection.end();
