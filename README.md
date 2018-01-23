@@ -1,6 +1,6 @@
 # Disputify
 A collaborative grade dispute system for CS students at USC.
-**Created Janurary, 2017**
+**Created December, 2017**
 
 ## Table of Contents
 - [About](#about)
