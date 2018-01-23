@@ -4,15 +4,6 @@
     <list default="true" id="a53ab276-feff-40cc-9ba0-1496fb58446a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/db.sql" afterPath="$PROJECT_DIR$/backend/database/db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/dbDriver.js" afterPath="$PROJECT_DIR$/backend/database/dbDriver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/server.js" afterPath="$PROJECT_DIR$/backend/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/app.bundle.js" afterPath="$PROJECT_DIR$/build/app.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/app.js" afterPath="$PROJECT_DIR$/reactApp/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/assets/stylesheets/facultyCourseList.less" afterPath="$PROJECT_DIR$/reactApp/assets/stylesheets/facultyCourseList.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/assets/stylesheets/studentAssignmentList.less" afterPath="$PROJECT_DIR$/reactApp/assets/stylesheets/studentAssignmentList.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,8 +77,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            <state relative-caret-position="423">
+              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -502,12 +493,12 @@
       <workItem from="1516593180089" duration="3229000" />
       <workItem from="1516597009280" duration="7771000" />
       <workItem from="1516644519267" duration="5236000" />
-      <workItem from="1516674516188" duration="2253000" />
+      <workItem from="1516674516188" duration="2609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80232000" />
+    <option name="totallyTimeSpent" value="80588000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -962,8 +953,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        <state relative-caret-position="423">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding />
         </state>
       </provider>
