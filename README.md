@@ -61,3 +61,7 @@ After clicking on one of the assignment boxes, you will be redirected to a new p
 After logging into a faculty page, you will be able to search for, or just show all the courses of USC's CS Department stored in our database.
 
 <img width="1024" alt="8" src="https://user-images.githubusercontent.com/22974252/35257960-54edfe4c-ffb1-11e7-83c1-1573417d6737.png">
+
+After clicking on one of the courses, you will see a full list of dispute notifications from different students. By clicking on the resolve/unresolve button, you can change the dispute status.
+
+<img width="1024" alt="9" src="https://user-images.githubusercontent.com/22974252/35258011-a2059578-ffb1-11e7-9d3d-8e095397bb89.png">
