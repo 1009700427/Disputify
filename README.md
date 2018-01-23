@@ -41,7 +41,7 @@ Installed MySQL
 ## Features
 
 ### Login and Register Page
-When you first open the app, it will ask you whether you are a student or a staff member. Then it will navigate you to the correct page for login and registration. Default username and password are both set to 111 for faculty and students, although you can also regieter your own customized user.
+When you first open the app, it will ask you whether you are a student or a staff member. Then it will navigate you to the correct page for login and registration. Default username and password are both set to 111 for faculty and students, although you can also register your own customized user.
 
 <img width="1024" alt="1" src="https://user-images.githubusercontent.com/22974252/35257731-f2ffb6ea-ffaf-11e7-9eca-3e971e4c6dee.png">
 <img width="1024" alt="2" src="https://user-images.githubusercontent.com/22974252/35257757-140dfb62-ffb0-11e7-92de-69631ca743b9.png">

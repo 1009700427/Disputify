@@ -4,25 +4,6 @@
     <list default="true" id="a53ab276-feff-40cc-9ba0-1496fb58446a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/dbDriver.js" afterPath="$PROJECT_DIR$/backend/database/dbDriver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/server.js" afterPath="$PROJECT_DIR$/backend/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/app.bundle.js" afterPath="$PROJECT_DIR$/build/app.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/app.js" afterPath="$PROJECT_DIR$/reactApp/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/FacultyCourses.js" afterPath="$PROJECT_DIR$/reactApp/components/FacultyCourses.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js" afterPath="$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" afterPath="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" afterPath="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/AccountType.js" afterPath="$PROJECT_DIR$/reactApp/views/AccountType.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/Assignment.js" afterPath="$PROJECT_DIR$/reactApp/views/Assignment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/Dispute.js" afterPath="$PROJECT_DIR$/reactApp/views/Dispute.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyLogin.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentLogin.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentLogin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentRegister.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentRegister.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -88,8 +69,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+            <state relative-caret-position="219">
+              <caret line="47" column="133" lean-forward="true" selection-start-line="47" selection-start-column="133" selection-end-line="47" selection-end-column="133" />
               <folding />
             </state>
           </provider>
@@ -514,12 +495,12 @@
       <workItem from="1516593180089" duration="3229000" />
       <workItem from="1516597009280" duration="7771000" />
       <workItem from="1516644519267" duration="5236000" />
-      <workItem from="1516674516188" duration="4577000" />
+      <workItem from="1516674516188" duration="4738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82556000" />
+    <option name="totallyTimeSpent" value="82717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -985,8 +966,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        <state relative-caret-position="219">
+          <caret line="47" column="133" lean-forward="true" selection-start-line="47" selection-start-column="133" selection-end-line="47" selection-end-column="133" />
           <folding />
         </state>
       </provider>
