@@ -16,11 +16,9 @@ export default class LoginForm extends React.Component{
 		}
 	}
 	onSubmit(event){ 
-		console.log("on submit");
 		event.preventDefault();
 		if(this.state.username==null || this.state.username=="" || this.state.password=="" || this.state.password==null){
-			console.log("unll?");
-			return false; 
+			return false;
 		}
 		// checks for user provided data 
 		const loginData = ["faculty", this.state.username, this.state.password];
@@ -31,7 +29,6 @@ export default class LoginForm extends React.Component{
 						name: arr[0].name,
 						fireRedirect: true
 					});
-					console.log(that.props);
 				}
 				else {
                     alert("Incorrect Username or Password");

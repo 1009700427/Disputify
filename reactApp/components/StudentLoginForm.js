@@ -1,7 +1,5 @@
 import React from "react";
-import axios from 'axios';
-import ReactDOM from "react-dom"; 
-import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
+import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap";
 import { Link, Redirect } from 'react-router-dom';
 import '../assets/stylesheets/login.less'
 const dbDriver = require("../../backend/database/dbDriver.js");
@@ -11,7 +9,7 @@ const config = {
 	user: 'root', 
 	password: 'abc', 
 	database: 'DisputifyDB'
-}
+};
 export default class LoginForm extends React.Component{
 	constructor(){
 		super(); 
@@ -35,7 +33,6 @@ export default class LoginForm extends React.Component{
 		// sets up connection 
 		var connection = mysql.createConnection(config);
 		connection.connect();
-		console.log(data);
 		connection.query("SELECT * FROM DisputifyDB.User WHERE type=? AND username=? AND password=?", data, function(error, results, fields){
 			console.log(connection.sql);
 			if(error){
@@ -43,15 +40,12 @@ export default class LoginForm extends React.Component{
 			}
 			if(results.length==0){
 				connection.end();
-				console.log("return false!");
-				alert("Incorrect Username or Password"); 
+				alert("Incorrect Username or Password");
 				return;
 			}
 			connection.end(); 
-			console.log("return true!");
 			that.setState({name: results[0].name});
 			that.setState({fireRedirect: true});
-			console.log("state: "+that.state.fireRedirect);
 		});
 	}
 	render(){

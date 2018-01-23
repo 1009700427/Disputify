@@ -4,6 +4,25 @@
     <list default="true" id="a53ab276-feff-40cc-9ba0-1496fb58446a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/database/dbDriver.js" afterPath="$PROJECT_DIR$/backend/database/dbDriver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/server.js" afterPath="$PROJECT_DIR$/backend/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/app.bundle.js" afterPath="$PROJECT_DIR$/build/app.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/app.js" afterPath="$PROJECT_DIR$/reactApp/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/FacultyCourses.js" afterPath="$PROJECT_DIR$/reactApp/components/FacultyCourses.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js" afterPath="$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" afterPath="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" afterPath="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/AccountType.js" afterPath="$PROJECT_DIR$/reactApp/views/AccountType.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/Assignment.js" afterPath="$PROJECT_DIR$/reactApp/views/Assignment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/Dispute.js" afterPath="$PROJECT_DIR$/reactApp/views/Dispute.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyLogin.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyLogin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" afterPath="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentLogin.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentLogin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reactApp/views/StudentRegister.js" afterPath="$PROJECT_DIR$/reactApp/views/StudentRegister.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +40,8 @@
       <file leaf-file-name="FacultyLogin.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyLogin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+            <state relative-caret-position="270">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -30,12 +49,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbDriver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/database/dbDriver.js">
+      <file leaf-file-name="FacultyRegister.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyRegister.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="132" column="82" lean-forward="false" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="82" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,8 +64,8 @@
       <file leaf-file-name="FacultyCourseList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2745">
-              <caret line="192" column="32" lean-forward="false" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
+            <state relative-caret-position="165">
+              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding>
                 <element signature="e#43#69#0" expanded="true" />
               </folding>
@@ -52,21 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="facultyCourseList.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/facultyCourseList.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="50" column="30" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StudentAssignmentList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
+            <state relative-caret-position="1860">
+              <caret line="124" column="32" lean-forward="true" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -77,18 +88,18 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="StudentLogin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactApp/views/StudentLogin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,8 +108,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reactApp/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="25" column="75" lean-forward="false" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
+            <state relative-caret-position="90">
+              <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentRegister.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactApp/views/StudentRegister.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -106,24 +127,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="studentAssignmentList.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/studentAssignmentList.less">
+      <file leaf-file-name="Dispute.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactApp/views/Dispute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state relative-caret-position="30">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assignment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reactApp/views/Assignment.js">
+      <file leaf-file-name="FacultyCourseAssignments.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-              <folding>
-                <element signature="e#43#69#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,9 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bor</find>
-      <find>borde</find>
-      <find>border</find>
       <find>\n            \.catch\(err \=\&gt; \{</find>
       <find>A</find>
       <find>D</find>
@@ -169,6 +185,9 @@
       <find>(&lt;Redirect to=</find>
       <find>(&lt;Redirect to</find>
       <find>&lt;Redirect to</find>
+      <find>cons</find>
+      <find>conso</find>
+      <find>console</find>
       <find>hashHistory</find>
     </findStrings>
   </component>
@@ -178,18 +197,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/reactApp/views/StudentLogin.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/Dispute.js" />
         <option value="$PROJECT_DIR$/reactApp/views/FacultyCourses.js" />
         <option value="$PROJECT_DIR$/reactApp/views/Course.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" />
-        <option value="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" />
         <option value="$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js" />
-        <option value="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/colors.less" />
-        <option value="$PROJECT_DIR$/reactApp/views/AccountType.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/StudentRegister.js" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/register.less" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/login.less" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/main.less" />
@@ -200,11 +211,20 @@
         <option value="$PROJECT_DIR$/backend/server.js" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/studentAssignmentList.less" />
         <option value="$PROJECT_DIR$/reactApp/assets/stylesheets/facultyCourseList.less" />
-        <option value="$PROJECT_DIR$/backend/database/dbDriver.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" />
-        <option value="$PROJECT_DIR$/reactApp/app.js" />
-        <option value="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/reactApp/views/FacultyLogin.js" />
+        <option value="$PROJECT_DIR$/backend/database/dbDriver.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js" />
+        <option value="$PROJECT_DIR$/reactApp/components/StudentCourseList.js" />
+        <option value="$PROJECT_DIR$/reactApp/components/StudentLoginForm.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/AccountType.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/Dispute.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/FacultyCourseList.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/FacultyRegister.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/StudentLogin.js" />
+        <option value="$PROJECT_DIR$/reactApp/views/StudentRegister.js" />
+        <option value="$PROJECT_DIR$/reactApp/app.js" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -494,12 +514,12 @@
       <workItem from="1516593180089" duration="3229000" />
       <workItem from="1516597009280" duration="7771000" />
       <workItem from="1516644519267" duration="5236000" />
-      <workItem from="1516674516188" duration="3939000" />
+      <workItem from="1516674516188" duration="4577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81918000" />
+    <option name="totallyTimeSpent" value="82556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
@@ -535,14 +555,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reactApp/components/StudentCourseList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -625,7 +637,7 @@
         <state relative-caret-position="135">
           <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -679,7 +691,7 @@
         <state relative-caret-position="300">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#0#26#0" expanded="false" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -707,33 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/components/FacultyCourses.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#43#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyRegister.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="61" lean-forward="true" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/components/StudentLoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="100" column="49" lean-forward="false" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -746,6 +731,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -756,62 +742,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/AccountType.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentRegister.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="25" column="20" lean-forward="true" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/register.less" />
-    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="e#43#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/login.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/components/StudentCourseList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -840,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/Dispute.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/main.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -871,34 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyLogin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="47" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/database/dbDriver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="132" column="82" lean-forward="false" selection-start-line="132" selection-start-column="61" selection-end-line="132" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="192" column="32" lean-forward="false" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
-          <folding>
-            <element signature="e#43#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reactApp/assets/stylesheets/studentAssignmentList.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -915,36 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="25" column="75" lean-forward="false" selection-start-line="25" selection-start-column="75" selection-end-line="25" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/Assignment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding>
-            <element signature="e#43#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -953,10 +823,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/database/dbDriver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="173" column="31" lean-forward="false" selection-start-line="173" selection-start-column="31" selection-end-line="173" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/components/FacultyCourses.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="e#43#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/components/FacultyLoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="30" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/components/Layout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/components/StudentCourseList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/components/StudentLoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/AccountType.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/Assignment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="e#43#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/Dispute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseAssignments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyCourseList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding>
+            <element signature="e#43#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/FacultyRegister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentLogin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentRegister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reactApp/views/StudentAssignmentList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1860">
+          <caret line="124" column="32" lean-forward="true" selection-start-line="124" selection-start-column="32" selection-end-line="124" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding />
         </state>
       </provider>

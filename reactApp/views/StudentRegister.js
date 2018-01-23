@@ -1,7 +1,6 @@
 import React from "react"; 
-import ReactDOM from "react-dom"; 
-import { Link } from "react-router-dom"; 
-import { FormGroup, FormControl, ControlLabel, Button} from "react-bootstrap"; 
+import { Link } from "react-router-dom";
+import { FormControl, ControlLabel, Button} from "react-bootstrap";
 const dbDriver = require("../../backend/database/dbDriver.js"); 
 
 export default class StudentRegister extends React.Component{

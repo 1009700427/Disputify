@@ -2,11 +2,9 @@
  * Created by siyuanxu on 1/15/18.
  */
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon, Modal, OverlayTrigger, Popover} from "react-bootstrap";
-import FacultyCourses from "../components/FacultyCourses.js";
+import { FormControl, Button, Glyphicon, Modal, OverlayTrigger, Popover} from "react-bootstrap";
 import StudentCourseList from "../components/StudentCourseList.js";
 import '../assets/stylesheets/facultyCourseList.less';
 
@@ -70,8 +68,6 @@ export default class FacultyCourseList extends React.Component{
         var that = this;
         axios.get("http://localhost:3000/showAllCourses")
             .then(resp => {
-                console.log(resp);
-                console.log(resp.data[0]);
                 that.setState({
                     courses: resp.data
                 });
@@ -100,7 +96,6 @@ export default class FacultyCourseList extends React.Component{
     }
     searchAssignmentByCourse(courseName){
         var that = this;
-        console.log(courseName);
         axios.get("http://localhost:3000/searchAssignmentByCourse", {
             params: {
                 courseName: courseName

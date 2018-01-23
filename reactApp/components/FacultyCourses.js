@@ -23,7 +23,6 @@ export default class StudentCourseList extends React.Component{
             that.setState({finalResult: result,
                 fireReturn: true,
                 dropdownTitle: result[0].name});
-            console.log(result);
         });
     }
     getCourses(title, i){

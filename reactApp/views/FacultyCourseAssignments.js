@@ -2,8 +2,6 @@
  * Created by siyuanxu on 1/15/18.
  */
 import React from "react";
-import axios from "axios";
-import { FormGroup, FormControl, ControlLabel, Button, Modal} from "react-bootstrap";
 
 export default class FacultyCourseAssignments extends React.Component{
     constructor(){

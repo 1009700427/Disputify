@@ -1,5 +1,5 @@
 # Disputify
-A collaborative grade dispute system for CS students at USC
+A collaborative grade dispute system for CS students at USC.
 **Created Janurary, 2017**
 
 ## Table of Contents
@@ -22,13 +22,16 @@ Installed MySQL
 2. ```cd Disputify```
 3. Run the query from ```backend/database/db.sql```
 4. Run ```npm install``` to download node modules
-5. Run ```npm run server``` to start the server
-6. Run ```npm start``` to launch the app
+5. Run ```npm run webpack``` to bundle the code
+6. Run ```npm run server``` to start the server
+7. Run ```npm start``` to launch the app
 
 ## Built With
 - Electron
+- Webpack
 - Frontend
     - React.js
+    - Axios.js
     - React-Bootstrap
     - LESS
     - HTML/CSS

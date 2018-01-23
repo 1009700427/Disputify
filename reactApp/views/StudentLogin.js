@@ -1,6 +1,4 @@
 import React from "react"; 
-import ReactDOM from "react-dom"; 
-import { Link } from "react-router-dom"; 
 import StudentLoginForm from "../components/StudentLoginForm";
 import '../assets/stylesheets/login.less'
 export default class StudentLogin extends React.Component{ 

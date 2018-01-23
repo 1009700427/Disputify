@@ -25,9 +25,6 @@ app.on('ready', function(){
 	const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 	// insert menu 
 	Menu.setApplicationMenu(mainMenu);
-
-	//console.log(Menu.setApplicationMenu(mainMenu));
-	console.log(mainMenu);
 });
 
 // Handles createAddWindow() 

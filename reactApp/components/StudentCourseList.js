@@ -1,7 +1,5 @@
 import React from "react"; 
-import ReactDOM from "react-dom"; 
-import { Link } from 'react-router-dom';
-import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap"; 
+import { DropdownButton, MenuItem } from "react-bootstrap";
 const dbDriver = require("../../backend/database/dbDriver.js");
 const mysql = require('mysql');
 const config = {
@@ -29,7 +27,6 @@ export default class StudentCourseList extends React.Component{
 				fireReturn: true,
 				dropdownTitle: result[0].name});
             this.props.handler(result[0].name);
-            console.log(result);
 		});
 	}
 	getCourses(title, i){
@@ -46,8 +43,6 @@ export default class StudentCourseList extends React.Component{
 			dropdownTitle: val
 		});
 		this.props.handler(val);
-		console.log(val);
-		console.log(e);
 	}
 	render(){
 		var that = this;

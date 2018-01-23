@@ -61,8 +61,6 @@ export default class Assignment extends React.Component{
             })
     }
     componentWillMount(){
-        console.log(this.props);
-        console.log(this.props.match.params.name);
         var that = this;
         axios.get("http://localhost:3000/assignment", {
             params: {
@@ -70,8 +68,6 @@ export default class Assignment extends React.Component{
             }
         })
             .then(resp => {
-                console.log(resp);
-                console.log(that.props);
                 that.setState({
                     name: resp.data[0].name,
                     description: resp.data[0].description,
@@ -85,13 +81,11 @@ export default class Assignment extends React.Component{
             });
     }
     render(){
-        console.log(this.props);
         var that = this;
         return(
             <div class="assignment">
                 <div class="assignment-wrapper">
                     <Button bsStyle="success"  class="button" onClick={() => {
-                        console.log(this.props);
                         this.setState({
                             fireRedirect: true
                         });

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import AccountType from "./views/AccountType.js";
 import StudentLogin from "./views/StudentLogin.js";
 import FacultyLogin from "./views/FacultyLogin.js";
@@ -21,7 +20,6 @@ const router = (
 			<Route path="/assignment/:name/:username/:realName/:courseID" component={Assignment}></Route>
   			<Route path="/" exact component={AccountType}></Route>
 			<Route path="/course/:name" exact component={Course}></Route>
-			{/*<Route path="/dispute/:description" component={Dispute}></Route>*/}
 			<Route path="/studentLogin" exact component={StudentLogin}></Route>
 			<Route path="/studentRegister" exact component={StudentRegister}></Route> 
 			<Route path="/facultyLogin" exact component={FacultyLogin}></Route> 

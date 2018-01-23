@@ -16,25 +16,18 @@ const config = {
 // returns all assignments
 app.get('/showAll', function(req, res){
     dbDriver.getAllAssignments((result) => {
-        console.log(result);
         res.send(result);
     });
 });
 // returns assignments of designated names
 app.get('/searchAssignment', function(req, res){
-    console.log("req.query: "+req.query);
-    console.log("in server: "+req.query.assignmentTitle);
     dbDriver.getAssignmentsByName(req.query.assignmentTitle, (result)=>{
-        console.log("In /searchAssignment");
-        console.log(result);
         res.send(result);
     });
 });
 // returns the particular assignment according to the given id
 app.get('/assignment', function(req, res){
     dbDriver.getAssignmentByExactName(req.query.name, (result)=>{
-        console.log("In /assignment");
-        console.log(result);
         res.send(result);
     });
 });
@@ -52,7 +45,6 @@ app.get('/disputeSubmit', function(req, res){
 // returns assignments by course name
 app.get('/searchAssignmentByCourse', (req, res) => {
     var courseName = req.query.courseName;
-    console.log("course name: " + courseName);
     dbDriver.getAssignmentByCourse(courseName, (result) => {
         res.send(result);
     });
@@ -73,7 +65,6 @@ app.get("/showAllCourses", (req, res) => {
 app.get('/getDisputes', (req, res) => {
     var courseName = req.query.courseName;
     dbDriver.getDisputes(courseName, (result) => {
-        //console.log("In Server: "+result[0].description);
         res.send(result);
     });
 });

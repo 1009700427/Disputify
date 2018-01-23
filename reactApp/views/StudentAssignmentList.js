@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import axios from 'axios';
 import { Link, Redirect} from 'react-router-dom';
-import { FormGroup, FormControl, ControlLabel, Button, DropdownButton, MenuItem, Glyphicon} from "react-bootstrap"; 
+import { FormControl, ControlLabel, Button, Glyphicon} from "react-bootstrap";
 import StudentCourseList from "../components/StudentCourseList";
 const dbDriver = require("../../backend/database/dbDriver.js");
 import '../assets/stylesheets/studentAssignmentList.less'
@@ -40,7 +39,6 @@ export default class StudentAssignmentList extends React.Component{
 	}
 	searchAssignmentByName(assignmentName){
 		var that = this;
-		console.log(assignmentName);
 		axios.get("http://localhost:3000/searchAssignment", {
 			params: {
                 assignmentTitle: assignmentName
@@ -50,7 +48,6 @@ export default class StudentAssignmentList extends React.Component{
 				that.setState({
 					assignments: resp.data
 				});
-				console.log(resp.data);
 			})
 			.catch(err => {
 				console.log("Error: cannot retrieve assignments in searchAssignment(assignmentName) ", err);
@@ -58,7 +55,6 @@ export default class StudentAssignmentList extends React.Component{
 	}
 	searchAssignmentByCourse(courseName){
 		var that = this;
-		console.log(courseName);
 		axios.get("http://localhost:3000/searchAssignmentByCourse", {
 			params: {
 				courseName: courseName
@@ -77,8 +73,6 @@ export default class StudentAssignmentList extends React.Component{
 		var that = this;
 		axios.get("http://localhost:3000/showAll")
 			.then(resp => {
-				console.log(resp);
-				console.log(resp.data[0]);
 				that.setState({
                     assignments: resp.data
 				});
@@ -122,12 +116,8 @@ export default class StudentAssignmentList extends React.Component{
 				<div class="assignment-info">
                     {
                         this.state.assignments.map((assignmentObj, i) => {
-                            console.log(this.state.name);
                             return(
 								<div key={i} class="list-item" onClick={()=>{
-                                    console.log(this.state.name);
-                                    console.log('/assignment/'+assignmentObj.name+'/'+this.state.username+'/'+this.state.name+'/'+assignmentObj.courseID);
-
 									this.setState({
 										fireRedirect: true,
 										objName: assignmentObj.name,
